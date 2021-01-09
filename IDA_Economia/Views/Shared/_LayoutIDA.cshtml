@@ -1,0 +1,118 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/png" href="~/Imagenes/favicon2.png" />
+
+    <title>@ViewBag.Title - IDA Economia</title>
+
+    @Styles.Render("~/Content/css")
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/angularJs")
+    @Scripts.Render("~/bundles/loadersJs")
+
+    @Scripts.Render("~/bundles/modernizr")
+
+    <script src="~/Scripts/Shared/LayoutIDA.js"></script>
+</head>
+<body>
+    <div>
+
+        @*ENCABEZADOS*@
+        <div class="container mw-100">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-blue _nav-bar">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <div class="navbar-nav">
+                        @*<a id="MenuHome" class="nav-item nav-link" href="~/Inicio/Inicio">
+                            <i class="fa fa-fw fa-home"></i>
+                            Inicio
+                        </a>*@
+
+                        @foreach (Entidades.CatPantalla pantalla in (List<Entidades.CatPantalla>)Session["ListPantalla"])
+                        {
+                            <a class="nav-item nav-link _font-header1" href=@pantalla.URL>
+                                <i class="fa fa-fw @pantalla.Icono"></i>
+                                @pantalla.Nombre  
+                            </a>
+                        }
+                        
+                        
+                        @if (Session["Usuario"] != null)
+                        {
+                            <ul class="navbar-nav ml-auto menu-login modal">
+                                <li class="nav-item dropdown ml-auto">
+                                    <a class="nav-link dropdown-toggle _font-header1" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="fa fa-fw fa-user-circle"></i>
+                                         @(((Entidades.Usuario)Session["Usuario"]).Login)
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <span class="dropdown-item">
+                                            <i class="fa fa-fw fa-user-lock"></i>
+                                             @(((Entidades.Usuario)Session["Usuario"]).Rol)
+                                        </span>
+                                        <div class="dropdown-divider"></div>
+                                        <button id="btnCerrarSesion" type="button" class="dropdown-item">
+                                            <i class="fa fa-fw fa-window-close"></i>
+                                             Cerrar sesion
+                                        </button>
+                                    </div>
+                                </li>
+                            </ul>
+                        }
+
+
+                        
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+
+        <div class="container body-content mw-100">
+            @*CUERPO*@
+            <div class="contenido-cuerpo">
+                @RenderBody()
+            </div>
+
+            <hr />
+
+            @*PIE DE PAGINA*@
+            <footer>
+                <p>&copy; @DateTime.Now.Year - IDA Economia</p>
+            </footer>
+        </div>
+
+
+        @*MODAL CARGAR*@
+        <div id="myModalLoader" class="modal fade modal-center" tabindex="-1" role="dialog" data-keyboard="false" data-backdrop="static">
+            <div class="modal-dialog">
+                <span class="modal-center-loading">Cargando...</span>
+                <main>
+                    <div class="loaders">
+                        <div class="loader">
+                            <div class="loader-inner ball-clip-rotate-multiple">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+
+        @RenderSection("scripts", required: false)
+
+
+    </div>
+</body>
+</html>

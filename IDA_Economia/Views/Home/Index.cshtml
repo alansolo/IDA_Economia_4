@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    @{
+
+        ViewBag.Title = "Home Page";
+        Layout = "~/Views/Shared/_Layout.cshtml";
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="~/Content/Views/Index.css" rel="stylesheet" />
+
+    }
+</head>
+
+<body>
+    <div class="home-logo-block">
+        <svg width="256px" height="272px" viewBox="0 0 256 272" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid">
+            <g>
+                <path class="bg" d="M0.0996108949,45.522179 L125.908171,0.697276265 L255.103502,44.7252918 L234.185214,211.175097 L125.908171,271.140856 L19.3245136,211.971984 L0.0996108949,45.522179 Z" fill="#E23237"></path>
+                <path class="bg-2" d="M255.103502,44.7252918 L125.908171,0.697276265 L125.908171,271.140856 L234.185214,211.274708 L255.103502,44.7252918 L255.103502,44.7252918 Z" fill="#B52E31"></path>
+                <path class="a" d="M126.107393,32.27393 L126.107393,32.27393 L47.7136187,206.692607 L76.9992218,206.194553 L92.7377432,166.848249 L126.207004,166.848249 L126.306615,166.848249 L163.063035,166.848249 L180.29572,206.692607 L208.286381,207.190661 L126.107393,32.27393 L126.107393,32.27393 Z M126.306615,88.155642 L152.803113,143.5393 L127.402335,143.5393 L126.107393,143.5393 L102.997665,143.5393 L126.306615,88.155642 L126.306615,88.155642 Z" fill="#FFFFFF"></path>
+            </g>
+        </svg>
+    </div>
+
+    <div id="services" class="home-services-block">
+        <p class="text-center text-style text-lightColor home-text-position">Soluciones<br />Implementamos soluciones para tus proyectos en cuatro áreas principales</p>
+
+        <section class="row home-services justify-content-center">
+            <div class="card-deck home-services-deck justify-content-center">
+                <div class="card text-center border-0 back-imgcard-services" style="width: 17.5rem;">
+                    <img class="card-img-top tamanoImagenServicios img-fluid" srcset="~/Imagenes/ida_Inversiones_x1.png 200w, ~/Imagenes/ida_Inversiones_x2.png 500w, ~/Imagenes/ida_Inversiones_x3.png 1000w" alt="Asesoría de Inversiones">
+                    <div class="card-body card-body-style-services text-lightColor">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="@Url.Action("Inversiones", "Home", new { area = ""})" class="btn btn-outline-success rounded-0">Ver más</a>
+                    </div>
+                </div>
+                <div class="card text-center border-0 back-imgcard-services" style="width: 17.5rem;">
+                    <img class="card-img-top tamanoImagenServicios img-fluid" srcset="~/Imagenes/ida_Espacial_x1.png 200w, ~/Imagenes/ida_Espacial_x2.png 500w, ~/Imagenes/ida_Espacial_x3.png 1000w" alt="Economia Espacial">
+                    <div class="card-body card-body-style-services text-lightColor">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="@Url.Action("EconomiaEspacial", "Home", new { area = ""})" class="btn btn-outline-success rounded-0">Ver más</a>
+                    </div>
+                </div>
+                <div class="card text-center border-0 back-imgcard-services" style="width: 17.5rem;">
+                    <img class="card-img-top tamanoImagenServicios img-fluid" srcset="~/Imagenes/ida_Desarrollo_x1.png 200w, ~/Imagenes/ida_Desarrollo_x2.png 500w, ~/Imagenes/ida_Desarrollo_x3.png 1000w" alt="Desarrollo">
+                    <div class="card-body card-body-style-services text-lightColor">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="@Url.Action("Desarrollo", "Home", new { area = ""})" class="btn btn-outline-success rounded-0">Ver más</a>
+                    </div>
+                </div>
+                <div class="card text-center border-0 back-imgcard-services" style="width: 17.5rem;">
+                    <img class="card-img-top tamanoImagenServicios img-fluid" srcset="~/Imagenes/ida_Proyecciones_x1.png 200w, ~/Imagenes/ida_Proyecciones_x2.png 500w, ~/Imagenes/ida_Proyecciones_x3.png 1000w" alt="Proyecciones macro">
+                    <div class="card-body card-body-style-services text-lightColor">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="@Url.Action("Proyecciones", "Home", new { area = ""})" class="btn btn-outline-success rounded-0">Ver más</a>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+    </div>
+
+    <section class="container home-research-block" style="padding:2em">
+        <div class="row justify-content-center home-research">
+            <div class="card-deck">
+                <article class="card card-research-style">
+                    <img class="card-img-top image-research-format" src="~/Imagenes/Refugio_1.png" alt="Card image cap">
+                    <div class="card-body card-body-style">
+                        <h5 class="card-title">¿Cómo vamos?</h5>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <p class="card-text"><small class="text-muted">Julio 2020</small></p>
+                        <p href="@Url.Action("EntornoMacro", "Home", new { area = ""})" class="card-link font-weight-bold">Ver artículo</p>
+                    </div>
+                </article>
+                <article class="card card-research-style">
+                    <img class="card-img-top image-research-format" src="~/Imagenes/Refugio_2.jpg" alt="Card image cap">
+                    <div class="card-body card-body-style">
+                        <h5 class="card-title">Prospectiva Económica</h5>
+                        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                        <p class="card-text"><small class="text-muted">Julio 2020</small></p>
+                        <p href="@Url.Action("Prospectiva", "Home", new { area = ""})" class="card-link font-weight-bold">Ver artículo</p>
+                    </div>
+                </article>
+                <article class="card card-research-style">
+                    <img class="card-img-top image-research-format" src="~/Imagenes/finanzas_4.png" alt="Card image cap">
+                    <div class="card-body card-body-style">
+                        <h5 class="card-title">Estrategia bursátil</h5>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                        <p class="card-text"><small class="text-muted">Julio 2020</small></p>
+                        <p href="@Url.Action("Estrategia", "Home", new { area = ""})" class="card-link font-weight-bold">Ver artículo</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    @*<footer>footer</footer>*@
+
+    <script src="~/Scripts/Index.js"></script>
+</body>
+</html>
+

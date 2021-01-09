@@ -1,0 +1,44 @@
+﻿body {
+}
+
+:root {
+    --primaryGreen: #72A611;
+    --primarylBlue: #0A262B;
+    --primaryGray: #1D1D1D;
+    --primaryWhite: #fAfAfA;
+    --secondaryWhite: #DEDEDE;
+}
+
+._notfound{
+    background-color: var(--primaryWhite);
+    width: 100%;
+    display: inline-block;
+    grid-column: 2;
+}
+
+._imagen-notfound {
+    width: 100px;
+    height: 100px;
+    margin-top: 4em;
+    margin-left:auto;
+    margin-right: auto;
+    display: block;
+}
+
+h2{
+    width: 20em;
+    display: flex;
+    align-content: center;
+    padding: 2em 0em;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+h3 {
+    width: 8.5em;
+    display: flex;
+    align-content: center;
+    padding: 0em 0em;
+    margin-left: auto;
+    margin-right: auto;
+}

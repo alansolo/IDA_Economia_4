@@ -1,0 +1,36 @@
+﻿body {
+}
+
+.botonAgregar {
+    margin-left:-250px;
+}
+
+._right {
+    display: none;
+}
+
+@media screen and (max-width: 450px){
+    ._table-usuario{
+        overflow-x: scroll;
+    }
+
+    ._table-usuario table {
+        width: auto;
+        font-size: 12px;
+        table-layout: fixed;
+        width: 500px;
+        text-align: center;
+    }
+
+    ._table-usuario td, ._table-usuario th {
+        padding: 0.5rem;
+    }
+
+    ._right {
+        display: block;
+        width: 20px;
+        position: relative;
+        margin-left: 90%;
+    }
+
+}

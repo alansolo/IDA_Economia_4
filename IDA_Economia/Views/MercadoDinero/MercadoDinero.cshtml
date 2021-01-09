@@ -1,0 +1,144 @@
+﻿
+@{
+    ViewBag.Title = "MercadoDinero";
+    Layout = "~/Views/Shared/_LayoutIDA.cshtml";
+}
+
+@*<h4>Mercado de Dinero</h4>*@
+
+<head>
+    <link href="~/Content/MercadoDinero/MercadoDinero.css" rel="stylesheet" />
+    <script src="~/Scripts/MercadoDinero/MercadoDinero.js"></script>
+
+    <script src="~/Scripts/google-chart.js"></script>
+</head>
+
+<body>
+    <div ng-app="MyApp" ng-controller="MyController">
+
+        <div class="accordion" id="accordionExampleTres">
+            <div class="card">
+                <div class="card-header" id="headingTres">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="" aria-expanded="true" aria-controls="collapseTres">
+                            <i class="fa fa-money-bill-alt fa-lg"></i> Mercado de Dinero
+                        </button>
+                    </h2>
+                </div>
+
+                <div id="collapseTres" class="collapse show" aria-labelledby="headingTres" data-parent="#accordionExampleTres">
+                    <div class="card-body">
+
+                        <div class="row">
+                            <div class="col-3" style="background-color: rgba(0, 0, 0, 0.03);">
+
+                                <div id="Dinerou1" style="margin-left: 20px; margin-top: 10px; width:250px; float:left;" align="center">
+                                    <p style="font-family: sans-serif">Compara en mercado de Dinero:</p>
+
+                                    <div ng-repeat="d in ListCatDinero" class="custom-control custom-radio">
+                                        <input type="radio" class="custom-control-input" id="customRadio{{d.Id}}" name="divisaRadio" ng-model="d.Check" value="{{d.Valor}}">
+                                        <label class="custom-control-label" for="customRadio{{d.Id}}" ng-model="d.Valor">{{d.Nombre}}</label>
+                                    </div>
+
+                                    <br />
+                                    <br />
+
+                                    <span>Fecha Inicial:</span>
+
+                                    <div class="input-group fecha-custom">
+                                        <input type="text" class="form-control fecha fecha-custom-text" id="fechaDocumento" name="fecha"
+                                               placeholder="DD/MM/YYYY" ng-model="FechaInicio" value="{{FechaInicio}}"
+                                               ng-change="" required readonly />
+                                        <div class="input-group-append">
+                                            <span class="input-group-text" id="basic-addon2">
+                                                <i class="fa fa-calendar-alt fa-lg"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <br />
+                                    <span>Fecha Final:</span>
+
+                                    <div class="input-group fecha-custom">
+                                        <input type="text" class="form-control fecha fecha-custom-text" id="fechaDocumento" name="fecha"
+                                               placeholder="DD/MM/YYYY" ng-model="FechaFinal" value="{{FechaFinal}}"
+                                               ng-change="" required readonly />
+                                        <div class="input-group-append">
+                                            <span class="input-group-text" id="basic-addon2">
+                                                <i class="fa fa-calendar-alt fa-lg"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <br />
+                                    <br />
+
+                                    <button runat="server" id="btnDivisa" class="btn btn-primary" ng-click="ObtenerEstadistico()">
+                                        <i class="fa fa-chart-line fa-lg"></i> Obtener Estadisticas
+                                    </button>
+
+                                    <br />
+                                    <br />
+
+                                    <a href="@Url.Action("ExportarExcel","MercadoDinero")" class="btn btn-primary" id="ExportarCronograma">
+                                        <i class="fa fa-file-excel fa-lg" aria-hidden="true"></i> Exportar
+                                    </a>
+
+                                    <br />
+                                    <br />
+
+                                </div>
+
+                            </div>
+                            <div class="col-9">
+
+                                <!--El usuario visualiza en esta parte la gráfica en línea de la serie elegida-->
+                                <div id="Dinerou2" style="height: 270px; width: 880px; float:left; margin-top:10px; margin-left: 45px; margin-right: auto; margin-bottom: auto;" align="center">
+
+                                    <span class="card-title">
+                                        <i class="fa fa-chart-area fa-lg"></i> Grafica Dinero
+                                    </span>
+                                    <br />
+
+                                    <div id="linechart_material"></div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+
+                                <!--Se muestran las estadísticas básicas de la serie económica: media, varianza, etc.-->
+                                <div id="Dinerou4" style="background-color:#FFFFFF;" align="center">
+
+                                    <br />
+
+                                    <div>
+                                        <table class="table">
+                                            <thead class="thead-light" ng-show="ListGraficoLinea.length">
+                                                <tr>
+                                                    <th>Fecha</th>
+                                                    <th>Valor</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr ng-repeat="d in ListGraficoLinea">
+                                                    <td>{{d.Fecha}}</td>
+                                                    <td>{{d.Valor}}</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>

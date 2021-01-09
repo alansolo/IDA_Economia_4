@@ -1,0 +1,43 @@
+﻿
+@{
+    ViewBag.Title = "VestibulodePagosRe";
+    Layout = "~/Views/Shared/_LayoutGrid.cshtml";
+}
+
+@model IDA_Economia.Controllers.PagosController
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>VestibulodePagos</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="~/Scripts/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+    <!--<script src="https://www.mercadopago.com.mx/integrations/v1/web-payment-checkout.js"-->
+    @*data-preference-id="@Html.DisplayFor(model => model.id)*@
+    <!--">
+    </script>-->
+
+    @if (ViewData["MensajePago"] != null && ViewData["MensajePago"].ToString() == "Pago realizado \"Correctamente\"")
+    {
+        <div class="alert alert-success" role="alert">
+            El pago se realizo correctamente
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-danger" role="alert">
+            Ocurrio un error al realizar el pago, intenta nuevamente
+        </div>
+    }
+
+    <a href="@Url.Action("Home", "Home", new { area = ""})" class="btn btn-primary">Pagina Inicio</a>
+
+</body>
+</html>

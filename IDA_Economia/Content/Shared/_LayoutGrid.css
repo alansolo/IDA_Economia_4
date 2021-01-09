@@ -1,0 +1,242 @@
+﻿body {
+}
+
+:root {
+    --primaryGreen: #72A611;
+    --primarylBlue: #0A262B;
+    --primaryGray: #1D1D1D;
+    --primaryWhite: #fAfAfA;
+    --secondaryWhite: #DEDEDE;
+}
+
+._body-content{
+    grid-column: 1 / span 3;
+}
+
+._principal {
+    background-color: var(--primaryWhite);
+    margin: auto;
+    width: 100%;
+    height: 100vh;
+    border-radius: .5em;
+    display: grid;
+    grid-template-rows: 5em 4fr 3.5em;
+    grid-template-columns: 1fr 5fr 1fr;
+}
+
+._footer{
+    height: 100%;
+    grid-row: 3;
+    grid-column: 1/ span 3;
+    background-color: var(--primaryGray);
+}
+
+._footer-copyright{
+    color: var(--primaryWhite);
+    font-family: 'Century Gothic';
+    display: inline-block;
+    width: auto;
+    height: auto;
+    margin: 1em 2em;
+}
+
+._media-icons{
+    grid-column: 3;
+    grid-row: 2;
+    display: inline-block;
+    position: relative;
+    left: 25%;
+    width: auto;
+    margin: 0px;
+    justify-content: center;
+}
+
+._navbar {
+    height: 4em;
+    grid-row: 1;
+    grid-column: 1/ span 3;
+    display: block;
+}
+
+._link-home {
+    font-family: 'Century Gothic';
+    font-size: 30px;
+    font-weight: 100;
+    color: var(--primaryGray);
+    margin-top: 5%;
+    margin-bottom: 5%;
+    text-decoration-style: none;
+}
+
+    ._link-home:hover {
+        text-decoration: none;
+        color: var(--primaryGray)
+    }
+
+._home-logo {
+    width: auto;
+    height: auto;
+    display: block;
+    position: absolute;
+    left: 4em;
+    top: 1.3em;
+}
+
+._menu-burger {
+    width: 50px;
+    height: 50px;
+    display: block;
+    position: absolute;
+    right: 4em;
+    top: 1.5em;
+}
+
+section {
+    background-color: var(--primaryGray);
+    opacity: 0.4;
+    position: absolute;
+    width: 60%;
+    height: 100%;
+    margin: 0;
+    top: 0;
+    display: flex;
+    transform: translateX(-100%);
+    transition: transform .8s;
+}
+
+.animate {
+    transform: translateX(0);
+}
+
+._menu-list {
+    background-color: var(--primaryGray);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 1)), url(/Imagenes/Oficina1.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 1;
+    position: absolute;
+    width: 39%;
+    height: 100%;
+    margin-left: 60%;
+    top: 0;
+    display: grid;
+    transform: translateX(-300%);
+    transition: transform 1s;
+}
+
+li {
+    
+    display: block;
+}
+
+._menu-list-in {
+    transform: translateX(0);
+}
+
+._list-item {
+    color: var(--secondaryWhite);
+    font-size: 30px;
+    font-weight: 700;
+    font-family: 'Century Gothic';
+    padding: .7em 1em;
+}
+
+    ._list-item:hover {
+        color: var(--primaryGreen);
+    }
+
+._list-link {
+    color: var(--secondaryWhite);
+    font-size: 23px;
+    font-weight: 700;
+    font-family: 'Century Gothic';
+}
+
+._list-link:hover {
+    color: var(--primaryGreen);
+    text-decoration: none;
+}
+
+._list {
+    display: block;
+    position: relative;
+    margin-bottom: 0;
+    height: 30em;
+}
+
+._close-img {
+    width: 30px;
+    height: 30px;
+    margin: 2em;
+    cursor: pointer;
+}
+
+._contact {
+    font-family: 'Century Gothic';
+    color: var(--secondaryWhite);
+    font-size: 14px;
+    font-weight: 100;
+    display: grid;
+    position: relative;
+    left: 5em;
+    width: 13em;
+    bottom: 11em;
+}
+
+@media screen and (max-width: 450px) {
+    ._home-logo {
+        left: 1em;
+    }
+
+    ._link-home {
+        font-size: 25px;
+    }
+
+    ._menu-burger {
+        right: 1em;
+    }
+
+    ._footer-copyright {
+        margin: 1em .5em;
+        font-size: 11px;
+    }
+
+    ._media-icons {
+        left: 17%;
+        top: 21%;
+    }
+
+    ._principal {
+        grid-template-columns: .5fr 4fr .5fr;
+        grid-template-rows: 4em 4fr 3.5em;
+    }
+
+    ._menu-list {
+        width: 70%;
+        margin-left: 30%;
+        transform: translateX(-400%);
+    }
+
+    ._menu-list-in {
+        transform: translateX(0%);
+        z-index: 100;
+    }
+
+    ._list-link {
+        font-size: 21px;
+    }
+
+    ._list-item {
+        padding: 1em 0.5em;
+    }
+
+    ._list {
+        padding-left: 0.5em;
+    }
+
+    ._contact {
+        left: 1.5em;
+        font-size: 12px;
+        bottom: 2em;
+    }
+}

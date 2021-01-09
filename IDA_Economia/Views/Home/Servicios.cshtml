@@ -1,0 +1,187 @@
+﻿
+@{
+    ViewBag.Title = "Servicios";
+
+}
+    
+
+<html>
+<head>
+    <link href="~/Content/Servicios.css" rel="stylesheet" />
+    <link href="~/Content/Shared/_LayoutGrid.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="~/Imagenes/favicon2.png" />
+</head>
+<body class="_principal">
+    <nav class="_navbar">
+        <div class="_home-logo">
+            <a class="_link-home" href="@Url.Action("Home", "Home", new { area = ""})">idA Economía</a>
+        </div>
+        <div class="_menu-burger">
+
+            <svg id="menuTrigger" href="#menu" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                 viewBox="0 0 512 512" style="enable-background:new 0 0 512 512; cursor:pointer; width:30px;" xml:space="preserve">
+            <g>
+            <g>
+            <path class="i1" d="M501.333,96H10.667C4.779,96,0,100.779,0,106.667s4.779,10.667,10.667,10.667h490.667c5.888,0,10.667-4.779,10.667-10.667
+			    S507.221,96,501.333,96z" />
+
+
+
+	                </g>
+                </g>
+            <g>
+            <g>
+            <path class="i2" d="M501.333,245.333H10.667C4.779,245.333,0,250.112,0,256s4.779,10.667,10.667,10.667h490.667
+			    c5.888,0,10.667-4.779,10.667-10.667S507.221,245.333,501.333,245.333z" />
+
+
+
+	                </g>
+                </g>
+            <g>
+            <g>
+            <path class="i3" d="M501.333,394.667H10.667C4.779,394.667,0,399.445,0,405.333C0,411.221,4.779,416,10.667,416h490.667
+			    c5.888,0,10.667-4.779,10.667-10.667C512,399.445,507.221,394.667,501.333,394.667z" />
+
+
+
+
+
+
+
+	                </g>
+
+                </svg>
+
+
+
+        </div>
+        <section>
+        </section>
+        <div id="menu" class="_menu-list">
+            <div> <img id="closemenu" class="_close-img" src="~/Imagenes/cerrar.png" /></div>
+            <ul class="_list">
+                <li class="_list-item"><a class="_list-link" href="@Url.Action("Servicios", "Home", new { area = ""})">Nuestros servicios</a></li>
+                <li class="_list-item"><a class="_list-link" href="@Url.Action("NotFound", "Home", new { area = ""})">Entorno económico</a></li>
+                <li class="_list-item"><a class="_list-link" href="@Url.Action("NotFound", "Home", new { area = ""})">Prospectiva mensual</a></li>
+                <li class="_list-item"><a class="_list-link" href="@Url.Action("NotFound", "Home", new { area = ""})">Nuestra recomendación</a></li>
+            </ul>
+            <div class="_contact">
+                Oficina: <br />
+                @*Ignacio Manuel Altamirano<br />*@
+                Colonia Cuahutémoc <br />
+                Toluca, Estado de México <br />
+                (722) 915 5668 <br />
+                Contacto: contacto.ida@gmail.com <br />
+            </div>
+        </div>
+    </nav>
+
+    <div class="_services">
+
+        @*<video src="~/Imagenes/Ink.mp4" type='video/mp4; codecs="avc1,mp4a"' class="video" loop autoplay muted preload="auto"></video>*@
+
+        <div class="_div-intro1"><span id="intro1" class="_intro">Fusionamos economía con arquitectura, urbanismo y programación</span></div>
+
+        <div class="_div-intro2"><span id="intro2" class="_intro2">Somos una empresa de consultoría económica y desarrollo de software</span></div>
+        <div class="_services1"><h1 class="_services-title">Nuestros Servicios</h1></div>
+        <div class="_services2 _appear">
+            <img class="_img-size" src="~/Imagenes/ida_Desarrollo_x3.png" />
+            <h2 class="_serv">Desarrollo de software</h2>
+            <ul class="_services-list">
+                <li class="_list-service">Desarrollo de aplicaciones web para ciencia económica y finanzas</li>
+                <li class="_list-service">Software a la medida</li>
+                <li class="_list-service">Construcción de bases de datos</li>
+                <li class="_list-service">Business intelligence</li>
+                <li class="_list-service">Data Science y big data</li>
+                <li class="_list-service">Desarrollo de sitios web</li>
+            </ul>
+        </div>
+        <div class="_services3 _appear">
+            <img class="_img-size" src="~/Imagenes/ida_Espacial_x3.png" />
+            <h2 class="_serv">Análisis económico-espacial</h2>
+            <ul class="_services-list">
+                <li class="_list-service">Análisis económico-espacial que permite ubicar la mejor zona para comprar un terreno</li>
+                <li class="_list-service">Ubicación de tu negocio con base en datos económicos, demográficos y urbanos</li>
+                <li class="_list-service">Proyecciónes de la expansión de mancha urbana</li>
+                <li class="_list-service">Asesoría para la ubicación de desarrollos habitacionales</li>
+            </ul>
+        </div>
+        <div class="_services4 _appear">
+            <img class="_img-size" src="~/Imagenes/ida_Proyecciones_x3.png" />
+            <h2 class="_serv">Consultoría económica</h2>
+            <ul class="_services-list">
+                <li class="_list-service">Modelos de pronóstico de PIB por estado y por sector económico</li>
+                <li class="_list-service">Modelos de pronóstico de variables macroeconómicas</li>
+                <li class="_list-service">Escenarios de prospectiva económica</li>
+                <li class="_list-service">Consultoría económica</li>
+                <li class="_list-service">Diagnóstico de la situación actual y vulnerabilidad económica de la empresa</li>
+                <li class="_list-service">Proyecciones de venta de acuerdo al sector</li>
+                <li class="_list-service">Seguimiento de indicadores macroeconómicos</li>
+            </ul>
+        </div>
+        <div class="_services5 _appear">
+            <img class="_img-size" src="~/Imagenes/ida_Inversiones_x3.png" />
+            <h2 class="_serv">Planeación financiera</h2>
+            <ul class="_services-list">
+                <li class="_list-service">Planeación financiera</li>
+                <li class="_list-service">Diagnóstico financiero de la empresa</li>
+                <li class="_list-service">Diseño de presupuestos financieros</li>
+                <li class="_list-service">Valuación de empresas</li>
+                <li class="_list-service">Evaluación financiera de proyectos de inversión</li>
+                <li class="_list-service">Análisis y estrategia de capital de trabajo</li>
+            </ul>
+        </div>
+        <div class="_services6 _appear">
+            <div class="_serv-promo">
+                <div class="_promo-description1">
+                    <h1 class="_description2">Stokhos</h1>
+                    <p class="_description1">Crea una cuenta gratis para ingresar a la beta de nuestra aplicación WEB sobre asesoría de inversiones.</p>
+                    <p class="_description1">
+                        No necesitas conocimientos especializados.
+                        Puedes diseñar tu portafolio a través del modelo de Markowitz
+                    </p>
+                    <p class="_description1">
+                        Damos seguimiento a las tendencias y la evolución del mercado.
+                        Te brindamos recomendaciones de inversión a través del análisis técnico con cifras en tiempo real y cálculo de probabilidades
+                    </p>
+                    <div class="_login-button">
+                        <a style="font-family: 'Century Gothic'; font-size: 18px; font-weight: 700; z-index: 100; color: #1D1D1D" href="@Url.Action("Login", "Login", new { area = ""})">Stokhos</a>
+                    </div>
+                </div>
+                <img class="_img-size2" src="~/Imagenes/Stokhos.png" />
+            </div>
+            
+        </div>
+
+    </div>
+
+
+
+    <footer class="_footer">
+        <div class="_footer-copyright">
+            &copy; @DateTime.Now.Year - INDUSTRIAS IDA SA DE CV
+        </div>
+        <div class="_media-icons">
+            <a href="https://www.facebook.com/idaarquitectosmx/">
+                <img src="~/Imagenes/FACEBOOK GRIS30.png" class="imgCentrado img-fluid" width="25" height="25" />
+            </a>
+            <a href="https://www.instagram.com/ida_arquitectos_mx/?hl=es-la">
+                <img src="~/Imagenes/INSTAGRAM GRIS30.png" class="imgCentrado img-fluid" width="25" height="25" />
+            </a>
+            <a href="https://www.linkedin.com/in/jonathan-%C3%A1lvarez-alc%C3%A1ntara-04467a64/">
+                <img src="~/Imagenes/LINKEDIN GRIS30.png" class="imgCentrado img-fluid" width="25" height="25" />
+            </a>
+        </div>
+    </footer>
+    <script src="~/Scripts/Shared/_LayoutGrid.js"></script>
+    <script src="~/Scripts/Servicios.js"></script>
+</body>
+</html>
+
+
+
+
+
+

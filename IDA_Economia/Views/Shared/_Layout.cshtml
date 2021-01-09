@@ -1,0 +1,123 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="~/Content/Shared/_Layout.css" rel="stylesheet" />
+    <link rel="icon" type="image/svg" href="~/Imagenes/2020.01.06 - IDA ECO RS.svg" sizes="any"/>
+
+    <title>@ViewBag.Title - IDA Economía Home</title>
+
+    @Styles.Render("~/Content/css")
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <nav class="navbar sticky-top navbar-details navbar-color">
+        @*<div class="container">
+            <div class="row">*@
+        <div class="col-4 text-center text-color-navbar">
+            <div class="margintext">idA ECONOMÍA</div>
+        </div>
+        <div class="col-4">
+
+        </div>
+        <div class="col-4 justify-content-end">
+            <div class="container">
+                <div class="row">
+                    <div class=" col-3 ">
+
+                    </div>
+                    <div class=" col-3 ">
+
+                    </div>
+                    <div class=" col-6 ">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link linktext" href="@Url.Action("Projects", "Projects", new { area = "" })">Proyectos<span class="sr-only">(current)</span></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link linktext" href="@Url.Action("About", "About", new { area = "" })">Nosotros</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link linktext" href="@Url.Action("Contact", "Contact", new { area = "" })">Contacto</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        @*</div>*@
+        @*<a class="navbar-brand">
+                <img src="~/Imagenes/IDAeco.png" class="d-block tamanoImagenHeader img-fluid">
+            </a>*@
+        @*</div>*@
+
+        <div>
+
+        </div>
+    </nav>
+
+    <div class="container-bodycontent-position">
+        @RenderBody()
+    </div>
+    <footer class="footer-details" style="height:100%">
+        <div class="container footer-details" style="padding-top:0rem">
+            <div class="row" style="padding-top:1em">
+                <div class="col-4">
+                    <div class="footer-copyright textstyle-footer text-color-footer">
+                        &copy; @DateTime.Now.Year - INDUSTRIAS IDA SA DE CV
+                    </div>
+                </div>
+
+                <div class="col-6">
+                    <div class="row justify-content-md-center">
+                        <div class="col-12 col-sm-4 col-md-6 col-lg-5 mr-auto ml-auto">
+                            <a href="https://www.facebook.com/idaarquitectosmx/" class="sinSombra">
+                                <img src="~/Imagenes/FACEBOOK GRIS30.png" class="imgCentrado img-fluid" width="25" height="25" />
+                            </a>
+                            <a href="https://www.instagram.com/ida_arquitectos_mx/?hl=es-la" class="sinSombra">
+                                <img src="~/Imagenes/INSTAGRAM GRIS30.png" class="imgCentrado img-fluid" width="25" height="25" />
+                            </a>
+                            <a href="https://www.linkedin.com/in/jonathan-%C3%A1lvarez-alc%C3%A1ntara-04467a64/" class="sinSombra">
+                                <img src="~/Imagenes/LINKEDIN GRIS30.png" class="imgCentrado img-fluid" width="25" height="25" />
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-4">
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12 contact text-left text-color-footer">
+                    Oficina: <br />
+                    Ignacio Manuel Altamirano<br />
+                    Colonia Cuahutémoc <br />
+                    Toluca, Estado de México <br />
+                    (722) 915 5668 <br />
+                    Contacto: contacto.ida@gmail.com <br />
+                </div>
+            </div>
+
+
+        </div>
+
+    </footer>
+
+    <script src="~/Scripts/Shared/_Layout.js"></script>
+</body>
+</html>

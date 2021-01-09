@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="~/Content/Shared/_LayoutGrid.css" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="~/Imagenes/favicon2.png" />
+
+    <title>@ViewBag.Title - IDA Economía Home</title>
+
+    @Styles.Render("~/Content/css")
+
+
+    @RenderSection("scripts", required: false)
+
+</head>
+<body class="_principal">
+
+    <nav class="_navbar">
+        <div class="_home-logo">
+            <a class="_link-home" href="@Url.Action("Home", "Home", new { area = ""})">idA Economía</a>
+        </div>
+        <div class="_menu-burger">
+
+            <svg id="menuTrigger" href="#menu" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                 viewBox="0 0 512 512" style="enable-background:new 0 0 512 512; cursor:pointer; width:30px;" xml:space="preserve">
+            <g>
+            <g>
+            <path class="i1" d="M501.333,96H10.667C4.779,96,0,100.779,0,106.667s4.779,10.667,10.667,10.667h490.667c5.888,0,10.667-4.779,10.667-10.667
+			    S507.221,96,501.333,96z" />
+
+	                </g>
+                </g>
+            <g>
+            <g>
+            <path class="i2" d="M501.333,245.333H10.667C4.779,245.333,0,250.112,0,256s4.779,10.667,10.667,10.667h490.667
+			    c5.888,0,10.667-4.779,10.667-10.667S507.221,245.333,501.333,245.333z" />
+
+	                </g>
+                </g>
+            <g>
+            <g>
+            <path class="i3" d="M501.333,394.667H10.667C4.779,394.667,0,399.445,0,405.333C0,411.221,4.779,416,10.667,416h490.667
+			    c5.888,0,10.667-4.779,10.667-10.667C512,399.445,507.221,394.667,501.333,394.667z" />
+
+	                </g>
+
+                </svg>
+
+
+
+        </div>
+        <section>
+        </section>
+        <div id="menu" class="_menu-list">
+            <div> <img id="closemenu" class="_close-img" src="~/Imagenes/cerrar.png" /></div>
+            <ul class="_list">
+                <li class="_list-item"><a class="_list-link" href="@Url.Action("Servicios2", "Home", new { area = ""})">Nuestros servicios</a></li>
+                <li class="_list-item"><a class="_list-link" href="@Url.Action("NotFound", "Home", new { area = ""})">Entorno económico</a></li>
+                <li class="_list-item"><a class="_list-link" href="@Url.Action("NotFound", "Home", new { area = ""})">Prospectiva mensual</a></li>
+                <li class="_list-item"><a class="_list-link" href="@Url.Action("NotFound", "Home", new { area = ""})">Nuestra recomendación</a></li>
+            </ul>
+            <div class="_contact">
+                Oficina: <br />
+                Ignacio Manuel Altamirano<br />
+                Colonia Cuahutémoc <br />
+                Toluca, Estado de México <br />
+                (722) 915 5668 <br />
+                Contacto: contacto.ida@gmail.com <br />
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="_body-content">
+        @RenderBody()
+    </div>
+
+    <footer class="_footer">
+        <div class="_footer-copyright">
+            &copy; @DateTime.Now.Year - INDUSTRIAS IDA SA DE CV
+        </div>
+        <div class="_media-icons">
+            <a href="https://www.facebook.com/idaarquitectosmx/">
+                <img src="~/Imagenes/FACEBOOK GRIS30.png" class="imgCentrado img-fluid" width="25" height="25" />
+            </a>
+            <a href="https://www.instagram.com/ida_arquitectos_mx/?hl=es-la">
+                <img src="~/Imagenes/INSTAGRAM GRIS30.png" class="imgCentrado img-fluid" width="25" height="25" />
+            </a>
+            <a href="https://www.linkedin.com/in/jonathan-%C3%A1lvarez-alc%C3%A1ntara-04467a64/">
+                <img src="~/Imagenes/LINKEDIN GRIS30.png" class="imgCentrado img-fluid" width="25" height="25" />
+            </a>
+        </div>
+    </footer>
+
+    
+    <script src="~/Scripts/Shared/_LayoutGrid.js"></script>
+</body>
+</html>

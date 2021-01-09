@@ -1,0 +1,204 @@
+﻿body {
+
+}
+
+:root {
+    --backblack: #101112 /*#494A4F*/;
+    --letterWhite: #F8F9F9;
+    --backLight: #D9D9D9;
+    --z-back: -10;
+    --z-normal: 1;
+    --z-tooltip: 10;
+    --z-fixed: 100;
+    --z-modal: 1000;
+    --scroll-bar: 13px;
+}
+
+.tamanoImagenServicios {
+    height: auto;
+    width: 14rem;
+    margin: auto;
+    max-width: 100%;
+}
+
+.text-style {
+    font-family: 'Century Gothic', Futura;
+    font-size: 1.4em !important;
+    font-weight: 100 !important;
+}
+
+.text-lightColor{
+    color: var(--letterWhite);
+}
+
+.home-logo-block {
+    height: 95vh;
+    width: 100%;
+    align-content: center;
+    justify-content: center;
+    display: grid;
+}
+
+    .home-logo-block::after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        left: 0%;
+        top: 0%;
+        z-index: var(--z-back);
+    }
+
+.home-services-block{
+    height: auto;
+    position:relative;
+}
+
+    .home-services-block::before{
+        content: "";
+        display: block;
+        width: 100%;
+        height: 100%;
+        background-color: var(--backblack);
+        position:absolute;
+        left: 0%;
+        z-index: var(--z-back);
+
+    }
+
+.home-text-position{
+    padding: 1em 2em;
+    margin-bottom: 0.5em;
+}
+
+.home-services {
+    width: 100%;
+    max-width: calc(100vw - var(--scroll-bar));
+    margin-left: 0px;
+    margin-right: 0px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.back-imgcard-services {
+    background-color: var(--backblack);
+    flex: 1 1 200px !important;
+}
+
+.card-body-style-services {
+    background-color: var(--backblack);
+}
+
+.home-research-block{
+    height: auto;
+    position:relative;
+}
+
+    .home-research-block::before {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0%;
+        z-index: var(--z-back);
+    }
+
+.home-research {
+    width: 100%;
+    margin-left: 0px;
+    margin-right: 0px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card-research-style{
+    flex: 1 1 200px !important;
+    
+}
+
+.image-research-format{
+    width:100%;
+    height: 170px;
+}
+
+article {
+    font-family: 'Century Gothic', Futura;
+    color: var(--letterWhite);
+}
+
+.card-body-style{
+    background-color: var(--backblack);
+    border-top:outset;
+}
+
+footer {
+    background-color: rebeccapurple;
+    padding: 1em;
+    margin-top: auto;
+    width: calc(100vw - var(--scroll-bar));
+}
+
+section{
+    opacity: 0;
+}
+
+.animate{
+    animation: appear .5s forwards;
+}
+
+@keyframes appear {
+    to {
+        opacity: 1;
+    }
+}
+
+.bg {
+    animation: bg 1s forwards;
+    fill: none;
+    stroke: #E23237;
+    stroke-width: 2px;
+    stroke-dashoffset: 0;
+    stroke-dasharray: 900px;
+}
+
+@keyframes bg {
+    0%{
+        stroke-dashoffset: 900px;
+    }
+    90%{
+        fill: none;
+        stroke-width: 2px;
+    }
+    100%{
+        stroke-width: 0;
+        fill: #E23237;
+    }
+}
+
+.bg-2{
+    animation: bg-2 1s 1s forwards;
+    opacity: 0;
+}
+
+@keyframes bg-2 {
+    to{
+        opacity:1;
+    }
+}
+
+.a{
+    animation: a 1s 2s forwards;
+    transform-origin: center center;
+    opacity: 0;
+}
+
+@keyframes a {
+    from {
+        transform: scale(0);
+    }
+    to{
+        opacity: 1;
+    }
+}

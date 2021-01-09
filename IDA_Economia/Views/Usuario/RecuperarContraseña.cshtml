@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "RecuperarContraseña";
+    Layout = "~/Views/Shared/_LayoutGrid.cshtml";
+}
+
+<html>
+<head>
+
+    <link href="~/Content/Usuario/RecuperarContraseña.css" rel="stylesheet" />
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <script src="~/Scripts/angular.min.js"></script>
+
+</head>
+<body ng-app="MyApp" ng-controller="MyController">
+
+    <div class="_titulo">
+        <h2>RecuperarContraseña</h2>
+        <label>Ingresa tu correo</label>
+        <input id="txtUser" type="email" class="form-control _reestablecer-input _font400" aria-describedby="emailHelp" ng-model="email">
+        <br />
+        <button id="btnLogin" type="submit" class="btn btn-primary _btnLogin _font400" ng-click="RecuperarContrasena(email)">Recuperar contraseña</button>
+        <div class="_alert-success" id="success">
+            <p>Se ha enviado un link a su correo para reestablecer la contraseña</p>
+        </div>
+
+        <div class="_alert-fail" id="fail">
+            <p>El correo ingresado no está vinculado a ninguna cuenta, verifícalo o contacta al administrador</p>
+        </div>
+    </div>
+
+    <script src="~/Scripts/Usuario/RecuperarContraseña.js"></script>
+</body>
+</html>
+

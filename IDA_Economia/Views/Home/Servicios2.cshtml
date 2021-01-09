@@ -1,0 +1,358 @@
+﻿
+@{
+    ViewBag.Title = "Servicios2";
+    
+}
+
+<html>
+<head>
+    <link href="~/Content/Servicios2.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="~/Imagenes/favicon2.png" />
+
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/angular.min.js"></script>
+    <script src="~/Scripts/bootstrap-notify.js"></script>
+</head>
+<body>
+    <div class="_principal">
+        <!--BARRA DE NAVEGACIÓN-->
+        <nav>
+            <div class="_home-logo">
+                <a class="_link-home" href="@Url.Action("Home", "Home", new { area = ""})">idA Economía</a>
+            </div>
+            <div class="_menu-burger">
+
+                <svg id="menuTrigger" href="#menu" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                     viewBox="0 0 512 512" style="enable-background:new 0 0 512 512; cursor:pointer; width:30px;" xml:space="preserve">
+                <g>
+                <g>
+                <path class="i1" d="M501.333,96H10.667C4.779,96,0,100.779,0,106.667s4.779,10.667,10.667,10.667h490.667c5.888,0,10.667-4.779,10.667-10.667
+			    S507.221,96,501.333,96z" />
+
+
+
+	                </g>
+                </g>
+                <g>
+                <g>
+                <path class="i2" d="M501.333,245.333H10.667C4.779,245.333,0,250.112,0,256s4.779,10.667,10.667,10.667h490.667
+			    c5.888,0,10.667-4.779,10.667-10.667S507.221,245.333,501.333,245.333z" />
+
+
+
+	                </g>
+                </g>
+                <g>
+                <g>
+                <path class="i3" d="M501.333,394.667H10.667C4.779,394.667,0,399.445,0,405.333C0,411.221,4.779,416,10.667,416h490.667
+			    c5.888,0,10.667-4.779,10.667-10.667C512,399.445,507.221,394.667,501.333,394.667z" />
+
+
+
+	                </g>
+
+                </svg>
+
+            </div>
+
+            <div class="_login-button">
+                <a style="font-family: 'Century Gothic'; font-size: 18px; font-weight: 700; z-index: 100; color: #1D1D1D" href="@Url.Action("Login", "Login", new { area = ""})">Stokhos</a>
+            </div>
+            <section>
+            </section>
+            <div id="menu" class="_menu-list">
+                <div> <img id="closemenu" class="_close-img" src="~/Imagenes/cerrar.png" /></div>
+                <ul class="_list">
+                    <li class="_list-item"><a class="_list-link" href="@Url.Action("Servicios2", "Home", new { area = ""})">Nuestros servicios</a></li>
+                    <li class="_list-item"><a class="_list-link" href="@Url.Action("NotFound", "Home", new { area = ""})">Entorno económico</a></li>
+                    <li class="_list-item"><a class="_list-link" href="@Url.Action("NotFound", "Home", new { area = ""})">Prospectiva mensual</a></li>
+                    <
+                    <li class="_list-item"><a class="_list-link" href="@Url.Action("NotFound", "Home", new { area = ""})">Nuestra recomendación</a></li>
+                </ul>
+                <div class="_contact">
+                    Oficina: <br />
+                    Colonia Cuahutémoc <br />
+                    Toluca, Estado de México <br />
+                    (722) 915 5668 <br />
+                    Contacto: contacto.ida@gmail.com <br />
+                </div>
+            </div>
+        </nav>
+
+        <!--SECCIÓN PRINCIPAL-->
+        <main>
+            <div class="home-logo-block">
+                <div class="_service">
+                    <p class="_serv-num">1/5 TI</p>
+                    <div class="_titulo-servicios">
+
+                        <div class="_imagen-servicios">
+                            <img src="~/Imagenes/ida_Desarrollo_x1.png" />
+                        </div>
+                        <p>Software especializado</p>
+
+                        <div class="_list-servicios">
+                            <ul>
+                                <li type="disc">Software financiero</li>
+                                <li>Business intelligence</li>
+                                <li>Data science</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="_service-text">
+                        <div class="_text-col1">
+                            <p>
+                                La ciencia económica ha estado rezagada del avance tecnológico por muchos años y se ha limitado
+                                a incluirla como una variable más en sus modelos. Además, la optimización de los recursos
+                                que siempre persigue parece no contemplar el tiempo que dedican a realizar cálculos recurrentes.
+                                Por otro lado, los paquetes estadísticos actuales se encuentran limitados en algunos aspectos.
+
+                            </p>
+                        </div>
+                        <div class="_text-col2">
+                            <p>
+                                Nosotros ayudamos a eliminar esta brecha y proporcionamos desarrollo de software especializado para
+                                economía y finanzas. Diseñamos soluciones a la medida a través de conexiones a bases de datos,
+                                construcción y consumo de API's, sitios web robustos y aplicaciones de escritorio.
+                            </p>
+                        </div>
+
+                        <div class="_text-col-media450">
+                            <p>
+                                Los paquetes estadísticos actuales se encuentran limitados en algunos aspectos.
+
+                                Nosotros ayudamos a eliminar esta brecha desarrollando software especializado para
+                                economía y finanzas. Diseñamos soluciones a la medida a través de conexiones a bases de datos,
+                                construcción y consumo de API's, sitios web y aplicaciones de escritorio.
+                            </p>
+                        </div>
+                    </div>
+
+                    
+
+                </div>
+                <div class="_service">
+                    <p class="_serv-num">2/5 Inmobiliaria</p>
+                    <div class="_titulo-servicios">
+
+                        <div class="_imagen-servicios">
+                            <img src="~/Imagenes/ida_Espacial_x1.png" />
+                        </div>
+                        <p>Economía espacial</p>
+
+                        <div class="_list-servicios">
+                            <ul>
+                                <li>Asesoría para compra de terrenos</li>
+                                <li>Desarrollo inmobiliario</li>
+                                <li>Valuación financiera de proyectos</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="_service-text">
+                        <div class="_text-col1">
+                            <p>
+                                Ayudamos a inmobiliarias, constructoras y público en general a encontrar la mejor zona de la ciudad
+                                para invertir. Las ciudades crecen de forma desigual y eso, aunado a los diferentes usos de suelo,
+                                provocan que el suelo gane valor a futuro. Significa que no todos los terrenos son una buena inversión.
+                                Queremos que saques el mayor provecho a tu dinero.
+                            </p>
+                        </div>
+                        <div class="_text-col2">
+                            <p>
+                                Analizamos el crecimiento urbano, crecimiento poblacional, desarrollo urbano y arquitectónico,
+                                además de ubicar zonas potenciales de riesgo para determinar las mejores zonas para invertir.
+                                Ya sea que busques desarrollar vivienda, adquirir un patrimonio o simplemente compra/venta,
+                                tenemos una solución integral para ti.
+                            </p>
+                        </div>
+
+                        <div class="_text-col-media450">
+                            <p>
+                                Las ciudades crecen de forma desigual lo que significa que no todos los terrenos son una buena inversión.
+                                Ayudamos a inmobiliarias, constructoras y público en general a encontrar la mejor zona de la ciudad
+                                para invertir.
+                                
+                                Si buscas desarrollar vivienda, adquirir un patrimonio o simplemente compra/venta,
+                                tenemos una solución integral para ti.
+
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="_service">
+                    <p class="_serv-num">3/5 Finanzas</p>
+                    <div class="_titulo-servicios">
+
+                        <div class="_imagen-servicios">
+                            <img src="~/Imagenes/ida_Inversiones_x1.png" />
+                        </div>
+                        <p>Planeación financiera</p>
+
+                        <div class="_list-servicios">
+                            <ul>
+                                <li>Evaluación financiera de proyectos</li>
+                                <li>Construcciónn de presupuestos</li>
+                                <li>Planeación financiera</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="_service-text">
+                        <div class="_text-col1">
+                            <p>
+                                La planeación financiera es fundamental para cualquier negocio, la falta de ella es una de
+                                las principales razones por las que las empresas quiebran. Un buen control de las finanzas de
+                                la empresa aumenta considerablemente la probabilidad de éxito del negocio. Nosotros
+                                te ayudamos a conocer si
+                                tu negocio es rentable antes de realizar cualquier inversión.
+                            </p>
+                        </div>
+                        <div class="_text-col2">
+                            <p>
+                                Nuestro servicio más tradicional. Tu decides el alcance pero ofrecemos un servicio integral, desde
+                                la evaluación financiera del proyecto antes de la inversión hasta la construcción de presupuestos de
+                                negocios en marcha para la reducción de costos y estrategias fiscales.
+                            </p>
+                        </div>
+
+                        <div class="_text-col-media450">
+                            <p>
+                                La falta de planeación financiera es una de las principales razones por las que las empresas quiebran. 
+                                
+                                Te ayudamos a conocer si tu idea de negocio es rentable antes de realizar cualquier inversión.
+
+                                Tu decides el alcance pero ofrecemos un servicio integral, desde
+                                la evaluación financiera previa a la inversión hasta la construcción de presupuestos de
+                                negocios en marcha.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="_service">
+                    <p class="_serv-num">4/5 Economía</p>
+                    <div class="_titulo-servicios">
+
+                        <div class="_imagen-servicios">
+                            <img src="~/Imagenes/ida_Proyecciones_x1.png" />
+                        </div>
+                        <p>Proyecciones económicas</p>
+
+                        <div class="_list-servicios">
+                            <ul>
+                                <li>Escenarios de crecimiento</li>
+                                <li>Prospectiva económica</li>
+                                <li>Proyeccion de variables económicas</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="_service-text">
+                        <div class="_text-col1">
+                            <p>
+                                El futuro es incierto y cualquier proyección tiene un margen de error. Sin embargo,
+                                puedes tomar mejores decisiones bajo nuestros escenarios de crecimiento económico. Te proporcionamos
+                                proyecciones de variables macroeconómicas para ayudarte a entender el contexto en el que se encuentra tu empresa
+                                para mejorar la toma de decisiones.
+                            </p>
+                        </div>
+                        <div class="_text-col2">
+                            <p>
+                                Ofrecemos escenarios de crecimiento económico por entidad y por sector productivo para proyectos de inversión
+                                ya sea carreteros o nuevos negocios. Las proyecciones de demanda (ventas) son el punto de partida para cualquier modelo financiero
+                                o construcción de presupuestos.
+                        </div>
+
+                        <div class="_text-col-media450">
+                            <p>
+                                La ciencia económica ha estado rezagada del avance tecnológico por muchos años y se ha limitado
+                                a incluirla como una variable más en sus modelos. Además, la optimización de los recursos
+                                que siempre persigue parece no contemplar el tiempo que dedican a realizar cálculos recurrentes.
+                                Por otro lado, los paquetes estadísticos actuales se encuentran limitados en algunos aspectos.
+
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="_service">
+                    <p class="_serv-num">5/5 Trading</p>
+                    <div class="_titulo-servicios">
+
+                        <div class="_imagen-servicios">
+                            <span>Stokhos</span>
+                        </div>
+                        <p>Asesoría de inversiones</p>
+
+                        <div class="_list-servicios">
+                            <ul>
+                                <li>Construcción de portafolio de inversión</li>
+                                <li>Estrategias de inversión</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="_service-text">
+                        <div class="_text-col1">
+                            <p>
+                                Somos un complemento de las plataformas de trading actual, no ofrecemos la compra y venta de acciones pero si te asesoramos sobre
+                                las mejores alternativas de inversión de acuerdo a nuestros cálculos. No necesitas conocimientos especializados, nosotros realizamos
+                                todo el análisis técnico y lo ponemos a tu disposición en una interfáz sencilla y amigable para cualquier usuario.
+                            </p>
+                        </div>
+                        <div class="_text-col2">
+                            <p>
+                                Cuando adquieres una suscripción de nuestro servicio tienes acceso a nuestras proyecciones del mercado, una herramienta para la construcción
+                                de tu portafolio de inversión, una herramienta para darle seguimiento diario, cálculo de soportes y resistencias y nuestras señales del mercado.
+                                Cuentas con 30 días de prueba gratis.
+                            </p>
+                        </div>
+
+                        <div class="_text-col-media450">
+                            <p>
+                                La ciencia económica ha estado rezagada del avance tecnológico por muchos años y se ha limitado
+                                a incluirla como una variable más en sus modelos. Además, la optimización de los recursos
+                                que siempre persigue parece no contemplar el tiempo que dedican a realizar cálculos recurrentes.
+                                Por otro lado, los paquetes estadísticos actuales se encuentran limitados en algunos aspectos.
+
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </main>
+
+        <!--SECCIÓN PRINCIPAL-->
+        <aside>
+            <div class="_servicios-block">
+                <span>Servicios</span>
+            </div>
+        </aside>
+
+        <!--FOOTER-->
+        <footer>
+            <ul class="_socialmedia">
+                <li>
+                    <a href="https://www.linkedin.com/in/jonathan-%C3%A1lvarez-alc%C3%A1ntara-04467a64/"><img class="_image-socialmedia" src="~/Imagenes/lin.svg" /></a>
+                </li>
+                @*<li>
+                    <img class="_image-socialmedia" src="~/Imagenes/twi.svg" />
+                </li>*@
+                <li>
+                    <a href="https://www.youtube.com/channel/UCaF8S6vjC1aWgJtfOhFlhWg?view_as=subscriber"><img class="_image-socialmedia" src="~/Imagenes/you.svg" /></a>
+                </li>
+                @*<li>
+                    <a><img style="cursor:pointer" data-toggle="modal" data-target="#staticBackdrop" class="_image-socialmedia" src="~/Imagenes/whatsapp.svg" /></a>
+                </li>*@
+            </ul>
+        </footer>
+
+    </div>
+    <script src="~/Scripts/Servicios2.js"></script>
+</body>
+</html>
+

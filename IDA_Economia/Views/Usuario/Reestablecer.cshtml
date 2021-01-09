@@ -1,0 +1,57 @@
+﻿
+@{
+    ViewBag.Title = "Reestablecer";
+    Layout = "~/Views/Shared/_LayoutGrid.cshtml";
+}
+
+<html>
+<head>
+    <link href="~/Content/Usuario/Reestablecer.css" rel="stylesheet" />
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <script src="~/Scripts/angular.min.js"></script>
+
+</head>
+<body ng-app="MyApp" ng-controller="MyController">
+    <form id="formulario">
+        <div class="_titulo">
+            <h2>Reestablecer Contraseña</h2>
+            <div class="_form-element" id="group-password">
+                <label class="_form-element" for="password">Nueva contraseña</label>
+                <div class="_group-input">
+                    <input id="password" name="password" type="password" class="form-control _font400 _form-input" aria-describedby="emailHelp" ng-model="password">
+                    <img class="_form-validacion" src="~/Imagenes/incorrecto.png" />
+                    <img class="_form-validacion2" src="~/Imagenes/comprobar.png" />
+                </div>
+                <p class="_form-info">Debe contener entre 6 y 12 caracteres con al menos una minúscula, una mayúscula y un número</p>
+            </div>
+            <br />
+            <div class="_form-element" id="group-confirmacion">
+                <label class="_form-element" for="confirmacion">Confirmar contraseña</label>
+                <div class="_group-input">
+                    <input id="confirmacion" name="confirmacion" type="password" class="form-control _font400 _form-input" aria-describedby="emailHelp" ng-model="confirmacion">
+                    <img class="_form-validacion" src="~/Imagenes/incorrecto.png" />
+                    <img class="_form-validacion2" src="~/Imagenes/comprobar.png" />
+                </div>
+                <p class="_form-info">Las contraseñas deben conincidir</p>
+            </div>
+            <br />
+            <div class="_form-warning" id="form-warning">
+                <p><img src="~/Imagenes/warningnegro.png" /><b>Error:</b>Por favor llene el formulario correctamente</p>
+            </div>
+            <br />
+            <button id="btnLogin" class="btn btn-primary _btnLogin _font400" ng-click="Reestablecer(password,confirmacion)">Reestablecer</button>
+            <div class="_alert-success" id="success">
+                <p>La contraseña ha sido modificada, puede ingresar a la plataforma</p>
+            </div>
+
+            <div class="_alert-fail" id="fail">
+                <p>No se puede modificar la contraseña por favor contacte al administrador</p>
+            </div>
+        </div>
+    </form>
+    <script src="~/Scripts/Usuario/Reestablecer2.js"></script>
+</body>
+</html>
+
+
+

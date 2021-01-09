@@ -1,0 +1,113 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login - IDA Economia</title>
+
+    <link rel="icon" type="image/png" href="~/Imagenes/favicon2.png" />
+
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/FontAwesome/all.css" rel="stylesheet" />
+    <link href="~/Content/Loaders/loaders.css" rel="stylesheet" />
+    <link href="~/Content/Shared/_LayoutIDA.css" rel="stylesheet" />
+    <link href="~/Content/Login/Login.css" rel="stylesheet" />
+
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/angular.min.js"></script> 
+    <script src="~/Scripts/bootstrap-notify.js"></script>
+    <script src="~/Scripts/Login/Login.js"></script>
+
+</head>
+<body>
+    <div class="_principal">
+        <div class="_home-logo">
+            <a class="_link-home" href="@Url.Action("Home", "Home", new { area = ""})">idA Economía</a>
+        </div>
+        <section class="_back">
+        </section>
+        <section>
+        </section>
+
+        @*PANEL DE INFORMACION*@
+    <div class="_info-app">
+        <h1>Stokhos</h1>
+        <p class="_p1">Tus decisiones de inversión ahora están respaldadas por analistas profesionales. 
+        Accede a nuestras proyecciones y recomendaciones.</p>
+        <p class="_p2">No somos una plataforma de trading, te ofrecemos toda la asesoría para decidir tus 
+        inversiones de forma segura a través de poderosas herramientas.</p>
+        <p class="_p2">Regístrate para una <span>prueba gratis de 30 días</span>, suscripción mensual de <span>$99 MXN.</span>
+        . Adquirir asesoría también es una inversión.
+        <p class="_p2">Dentro de la plataforma puedes acceder al vestíbulo de pago. Puedes cancelar en cualquier momento.</p>
+
+        @*<div class="_login-button">
+            <a style="font-family: 'Century Gothic'; font-size: 18px; font-weight: 700; z-index: 100; color: #1D1D1D" href="@Url.Action("Login", "Login", new { area = ""})">Invertir</a>
+        </div>*@
+
+    </div>
+
+        <div class="_container" ng-app="MyApp" ng-controller="MyController">
+            @*PANEL DE LOGIN*@
+            <div class="container">
+                <form runat="server">
+                    <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-user"></i></span>
+                        </div>
+                        <input id="txtUser" runat="server" type="email" class="form-control" placeholder="Email" ng-model="usuario" />
+
+                    </div>
+                    <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-key"></i></span>
+                        </div>
+                        <input id="txtPassword" runat="server" type="password" class="form-control" placeholder="password" ng-model="password" />
+                    </div>
+                    <div class="form-group">
+                        <button id="btnLogin" runat="server" class="float-right _login-button" ng-click="ValidarLogin(usuario, password)">
+                            Login
+                        </button>
+                        <br />
+                        <br />
+                        <p class="_text">¿Aún no tienes cuenta? <a class="_link" href="@Url.Action("Register", "Login", new { area = ""})">Registrate</a></p>
+                        <p class="_text"><a class="_link" href="@Url.Action("RecuperarContraseña", "Usuario", new { area = ""})">¿Olvidaste tu contraseña?</a></p>
+                    </div>
+                    <br />
+                    <br />
+                    <div class="form-group">
+                        <div id="divMensajeError" class="alert alert-danger" role="alert" ng-show="visibleError">
+                            <span id="MensajeError">{{mensajeError}}</span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            @*MODAL CARGAR*@
+            <div id="myModalLoader" class="modal fade modal-center" tabindex="-1" role="dialog" data-keyboard="false" data-backdrop="static">
+                <div class="modal-dialog">
+                    <span class="modal-center-loading">Cargando...</span>
+                    <main>
+                        <div class="loaders">
+                            <div class="loader">
+                                <div class="loader-inner ball-clip-rotate-multiple">
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </main>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>

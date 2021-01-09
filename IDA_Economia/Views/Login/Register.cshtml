@@ -1,0 +1,380 @@
+﻿
+@{
+    ViewBag.Title = "Register";
+   
+}
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login - IDA Economia</title>
+
+    <link rel="icon" type="image/png" href="~/Imagenes/favicon2.png" />
+
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/FontAwesome/all.css" rel="stylesheet" />
+    <link href="~/Content/Loaders/loaders.css" rel="stylesheet" />
+    <link href="~/Content/Login/Register.css" rel="stylesheet" />
+
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/angular.min.js"></script>
+    <script src="~/Scripts/bootstrap-notify.js"></script>
+
+
+</head>
+<body ng-app="MyApp" ng-controller="MyController">
+    <div class="_principal">
+        <div class="_home-logo">
+            <a class="_link-home" href="@Url.Action("Home", "Home", new { area = ""})">idA Economía</a>
+        </div>
+        <div class="_container">
+            @*PASOS*@
+            <div class="_progress-bar">
+                <div class="_step">
+                    <p>Cuenta</p>
+                    <div class="_num">
+                        <span>1</span>
+                    </div>
+                    <div class="_check fas fa-check"></div>
+                </div>
+                <div class="_step">
+                    <p>Perfil</p>
+                    <div class="_num">
+                        <span>2</span>
+                    </div>
+                    <div class="_check fas fa-check"></div>
+                </div>
+                <div class="_step">
+                    <p>Información</p>
+                    <div class="_num">
+                        <span>3</span>
+                    </div>
+                    <div class="_check fas fa-check"></div>
+                </div>
+            </div>
+
+            @*FORMULARIO*@
+            <div class="_form-principal">
+                <form class="_form" id="formulario">
+                    @*Step 1*@
+                    <div class="_page _movPag">
+                        <h4>Datos de la cuenta</h4>
+
+                        <div class="_field">
+                            <div class="_form-group" id="group-nombre">
+                                <label for="nombre" class="_field-name">Nombre</label>
+                                <div class="_group-input">
+                                    <input class="_form-input" type="text" id="nombre" name="nombre" required placeholder="Nombre" pattern="[a-zA-Z ñÑáéíóúÁÉÍÓÚ]{5,50}" ng-model="Registro.Nombre" />
+                                    <img class="_form-validacion" src="~/Imagenes/incorrecto.png" />
+                                    <img class="_form-validacion2" src="~/Imagenes/comprobar.png" />
+                                </div>
+                                <p class="_form-info">El nombre sólo debe contener letras</p>
+                            </div>
+
+                            <div class="_form-group" id="group-correo">
+                                <label for="correo" class="_field-name">Correo</label>
+                                <div class="_group-input">
+                                    <input class="_form-input" type="email" id="correo" name="correo" required placeholder="Correo" ng-model="Registro.Correo" />
+                                    <img class="_form-validacion" src="~/Imagenes/incorrecto.png" />
+                                    <img class="_form-validacion2" src="~/Imagenes/comprobar.png" />
+                                </div>
+                                <p class="_form-info">La dirección de correo no es válida</p>
+                            </div>
+
+                            <div class="_form-group _password" id="group-password">
+                                <label for="password" class="_field-name">Contraseña</label>
+                                <div class="_group-input">
+                                    <input class="_password-input _form-input" type="password" id="password" name="password" required minlength="8" placeholder="Contraseña"
+                                           pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" ng-model="Registro.Password" />
+                                    <img class="_form-validacion" src="~/Imagenes/incorrecto.png" />
+                                    <img class="_form-validacion2" src="~/Imagenes/comprobar.png" />
+                                </div>
+                                <p class="_form-info">Mínimo 8 caracteres con una minúscula, una mayúscula y un número</p>
+                            </div>
+
+                            <div class="_form-group _password" id="group-confirmacion">
+                                <label for="confirmacion" class="_field-name">Confirmar contraseña</label>
+                                <div class="_group-input">
+                                    <input class="_password-input _form-input" type="password" id="confirmacion" name="confirmacion" required minlength="8" placeholder="Confirmar contraseña"
+                                           pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" ng-model="Registro.Confirmacion" />
+                                    <img class="_form-validacion" src="~/Imagenes/incorrecto.png" />
+                                    <img class="_form-validacion2" src="~/Imagenes/comprobar.png" />
+                                </div>
+                                <p class="_form-info">No coincide con el password</p>
+                            </div>
+
+                        </div>
+
+                        <br />
+                        <div class="_sigPag">
+                            <button type="submit" class="_btn">Siguiente</button>
+                        </div>
+                    </div>
+                    @*Step 2*@
+                    <div class="_page">
+                        <h4>Descripción del anuncio</h4>
+
+                        <div class="_field">
+
+                            <div class="_form-group" id="group-estudios">
+                                <label for="estudios" class="_field-name">Grado de estudios</label>
+                                <div class="_group-input">
+                                    <input class="_form-input" list="list-estudios" type="text" id="estudios" name="estudios" required placeholder="Estudios" ng-model="Registro.Estudios" />
+                                    <datalist id="list-estudios">
+                                        <option>Primaria</option>
+                                        <option>Secundaria</option>
+                                        <option>Preparatoria</option>
+                                        <option>Licenciatura</option>
+                                        <option>Maestría</option>
+                                        <option>Doctorado</option>
+                                    </datalist>
+                                    <img class="_form-validacion" src="~/Imagenes/incorrecto.png" />
+                                    <img class="_form-validacion2" src="~/Imagenes/comprobar.png" />
+                                </div>
+                                <p class="_form-info">Seleccione una opción de la lista</p>
+                            </div>
+
+                            <div class="_form-group" id="group-perfil">
+                                <label for="perfil" class="_field-name">Perfil profesional</label>
+                                <div class="_group-input">
+                                    <input class="_form-input" type="text" id="perfil" name="perfil" required placeholder="Perfil" ng-model="Registro.Perfil" />
+                                    <img class="_form-validacion" src="~/Imagenes/incorrecto.png" />
+                                    <img class="_form-validacion2" src="~/Imagenes/comprobar.png" />
+                                </div>
+                                <p class="_form-info">Debe ingresar únicamente letras</p>
+                            </div>
+
+                            <div class="_form-group" id="group-ocupacion">
+                                <label for="ocupacion" class="_field-name">Ocupación</label>
+                                <div class="_group-input">
+                                    <input class="_form-input" type="text" id="ocupacion" name="ocupacion" required placeholder="Ocupacion" ng-model="Registro.Ocupacion" />
+                                    <img class="_form-validacion" src="~/Imagenes/incorrecto.png" />
+                                    <img class="_form-validacion2" src="~/Imagenes/comprobar.png" />
+                                </div>
+                                <p class="_form-info">Debe ingresar únicamente letras</p>
+                            </div>
+
+                            <div class="_form-group" id="group-experiencia">
+                                <label for="experiencia" class="_field-name">Experiencia en inversiones</label>
+                                <div class="_group-input">
+                                    <input class="_form-input" list="list-experiencia" type="text" id="experiencia" name="experiencia" required placeholder="Experiencia" ng-model="Registro.Experiencia" />
+                                    <datalist id="list-experiencia">
+                                        <option>Nunca he invertido</option>
+                                        <option>He escuchado al respecto</option>
+                                        <option>Tengo miedo de perder mi dinero</option>
+                                        <option>Llevo menos de un año invirtiendo</option>
+                                        <option>Llevo más de un año invirtiendo</option>
+                                        <option>Me considero un experto en el tema</option>
+                                    </datalist>
+                                    <img class="_form-validacion" src="~/Imagenes/incorrecto.png" />
+                                    <img class="_form-validacion2" src="~/Imagenes/comprobar.png" />
+                                </div>
+                                <p class="_form-info">Seleccione una opción de la lista</p>
+                            </div>
+
+                        </div>
+                        <br />
+
+                        <div class="_sigPag">
+                            <button class="_btn _volver-pag1">Atrás</button>
+                            <button type="submit" class="_btn _adelante-pag3">Adelante</button>
+                        </div>
+
+                    </div>
+                    @*Step 3*@
+                    <div class="_page">
+                        <h4>¿Cómo nos conociste</h4>
+                        <div class="_field">
+
+                            <div class="_form-group" id="group-marketing">
+                                <label for="marketing" class="_field-name">Marketing</label>
+                                <div class="_group-input">
+                                    <input class="_form-input" list="list-marketing" type="text" id="marketing" name="marketing" required placeholder="Marketing" ng-model="Registro.Marketing" />
+                                    <datalist id="list-marketing">
+                                        <option>Por recomendación de un amigo</option>
+                                        <option>Por publicidad en facebook</option>
+                                        <option>Por publicidad en google</option>
+                                        <option>En foros y conferencias</option>
+                                        <option>Búsqueda en internet</option>
+                                    </datalist>
+                                    <img class="_form-validacion" src="~/Imagenes/incorrecto.png" />
+                                    <img class="_form-validacion2" src="~/Imagenes/comprobar.png" />
+                                </div>
+                                <p class="_form-info">Seleccione una opción de la lista</p>
+                            </div>
+
+
+
+                        </div>
+                        @*<div class="_field _group-radiobutton">
+
+                                <div class="_form-check">
+                                    <input type="radio" name="radioregister" value="recomendacion" class="_check-input" />
+                                    <label class="_check-label">Recomendación de un amigo</label>
+                                </div>
+                                <div class="_form-check">
+                                    <input type="radio" name="radioregister" value="facebook" class="_check-input" />
+                                    <label class="_check-label">Publicidad en facebook</label>
+                                </div>
+                                <div class="_form-check">
+                                    <input type="radio" name="radioregister" value="google" class="_check-input" />
+                                    <label class="_check-label">Publicidad en google</label>
+                                </div>
+                                <div class="_form-check">
+                                    <input type="radio" name="radioregister" value="conferencias" class="_check-input" />
+                                    <label class="_check-label">Conferencias</label>
+                                </div>
+                                <div class="_form-check">
+                                    <input type="radio" name="radioregister" value="busqueda" class="_check-input" />
+                                    <label class="_check-label">Busqueda en internet</label>
+                                </div>
+
+                            </div>*@
+                        <br />
+
+
+
+                        <div class="_form-check" id="_group-terminos">
+                            <input type="checkbox" name="checkterminos" value="terminos" id="terminos" class="_check-input" />
+                            <label class="_check-label">
+                                Acepto los términos y condiciones
+
+                            </label>
+                        </div>
+
+                        <!-- Button trigger modal -->
+                        <button type="button" class="_btn" data-toggle="modal" data-target="#staticBackdrop">
+                            Términos y condiciones
+                        </button>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header _modal-header-color">
+                                        <h5 class="modal-title" id="staticBackdropLabel">Términos y condiciones</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body _modal-overflow">
+                                        <p>
+                                            Esta página web es propiedad y está operado por INDUSTRIAS IDA SA DE CV.
+                                            Estos Términos establecen los términos y condiciones bajo los cuales tu puedes usar nuestra
+                                            página web y servicios ofrecidos por nosotros. Esta página web ofrece a los visitantes
+                                            únicamente asesoría de inversión basado en nuestra herramienta, sólidos conocimientos técnicos
+                                            y nuestra experiencia. Al acceder o usar la página web de nuestro
+                                            servicio, usted aprueba que haya leído, entendido y aceptado estar sujeto a estos Términos:
+                                        </p>
+                                        <p>
+                                            Para usar nuestro página web y / o recibir nuestros servicios, debes tener al menos 18
+                                            años de edad, o la mayoría de edad legal en tu jurisdicción, y poseer la autoridad legal, el derecho y
+                                            la libertad para participar en estos Términos como un acuerdo vinculante. No tienes permitido utilizar
+                                            esta página web y / o recibir servicios si hacerlo está prohibido en tu país o en virtud de cualquier
+                                            ley o regulación aplicable a tu caso.
+                                        </p>
+                                        <p>
+                                            Al crear un cuenta con nosotros, aceptas que: (i) eres responsable de leer el acuerdo completo
+                                            antes de comprometerte a crear la cuenta: (ii) deslindas a INDUSTRIAS IDA SA DE CV de cualquier pérdida
+                                            o ganancia en tus inversiones, toda vez que, al crear una cuenta: (iii) aceptas que existe el riesgo de
+                                            perder tu dinero.
+                                        </p>
+                                        <p>
+                                            Los precios que cobramos por usar nuestros servicios se enumeran en  la página web.
+                                            Nos reservamos el derecho de cambiar nuestros precios para los productos que se muestran en cualquier momento
+                                            y de corregir los errores de precios que pueden ocurrir inadvertidamente. Información adicional sobre precios
+                                            e impuestos sobre las ventas está disponible en la página de pagos.
+                                        </p>
+                                        <p>
+                                            "La tarifa por los servicios y cualquier otro cargo que pueda incurrir en relación con tu uso del servicio,
+                                            como los impuestos y las posibles tarifas de transacción, se cobrarán mensualmente a tu método de pago.
+                                        </p>
+                                        <p>
+                                            Para cualquier inconveniente con el sistema será necesario comunicarse con el administrador y lo repararemos
+                                            o te ofreceremos un reembolso basado en el método de pago original. En el caso de dar por terminado el servicio,
+                                            este permanecerá activo hasta que el plazo de todas las suscripciones haya terminado.
+                                            Además, ten en cuenta lo siguiente: (i) Los reembolsos solo se pueden devolver en la moneda con la que se compraron
+                                            originalmente; y (ii) los siguientes productos no son elegibles para la devolución: suscripción mensual, trimestral o anual a Stokhos.
+                                        </p>
+                                        <p>
+                                            Podemos, sin aviso previo, cambiar los servicios; dejar de proporcionar los servicios o cualquier característica
+                                            de los servicios que ofrecemos; o crear límites para los servicios. Podemos  suspender de manera permanente o temporal
+                                            el acceso a los servicios sin previo aviso ni responsabilidad por cualquier motivo, o sin ningún motivo.
+                                        </p>
+                                        <p>
+                                            No garantizamos ningún tipo de rendimiento sobre las inversiones que el cliente decida realizar, los cálculos realizados
+                                            por Stokhos están basados en las cotizaciones diarias del mercado de valores por lo que no nos hacemos responsables por
+                                            pérdidas o ganancias. La plataforma proporciona recomendaciones de inversión y es responsabilidad del usuario utilizaras para
+                                            sus decisiones de inversión.
+                                        </p>
+                                        <p>
+                                            El Servicio y todos los materiales incluidos o transferidos, incluyendo, sin limitación, software, algoritmos, códigos, imágenes, texto, gráficos,
+                                            logotipos, patentes, marcas registradas, marcas de servicio, derechos de autor, fotografías, audio, videos, música y todos los
+                                            Derechos de Propiedad Intelectual relacionados con ellos, son la propiedad exclusiva de INDUSTRIAS IDA SA DE CV.
+                                            Salvo que se indique explícitamente en este documento, no se considerará que nada en estos Términos crea una licencia en o bajo
+                                            ninguno de dichos Derechos de Propiedad Intelectual, y tu aceptas no vender, licenciar, alquilar, modificar, distribuir, copiar,
+                                            reproducir, transmitir, exhibir públicamente, realizar públicamente, publicar, adaptar, editar o crear trabajos derivados de los mismos.
+                                        </p>
+                                        <p>
+                                            Podemos terminar o suspender de manera permanente o temporal tu acceso al servicio sin previo aviso y responsabilidad por cualquier razón,
+                                            incluso si a nuestra sola determinación tu violas alguna disposición de estos Términos o cualquier ley o regulación aplicable. Puedes
+                                            descontinuar el uso y solicitar cancelar tu cuenta y / o cualquier servicio en cualquier momento. Sin perjuicio de lo contrario en lo
+                                            que antecede, con respecto a las suscripciones renovadas automáticamente a los servicios pagados, dichas suscripciones se suspenderán
+                                            solo al vencimiento del período correspondiente por el que ya has realizado el pago.
+                                        </p>
+                                        <p>
+                                            Usted acuerda indemnizar y eximir de responsabilidad a INDUSTRIAS IDA SA DE CV de cualquier demanda, pérdida, responsabilidad,
+                                            reclamación o gasto (incluidos los honorarios de abogados) que terceros realicen en tu contra como consecuencia de, o derivado de,
+                                            o en relación con tu uso de la página web o cualquiera de los servicios ofrecidos en la página web.
+                                        </p>
+                                        <p>
+                                            En la máxima medida permitida por la ley aplicable, en ningún caso el INDUSTRIAS IDA SA DE CV será responsable por daños indirectos,
+                                            punitivos, incidentales, especiales, consecuentes o ejemplares, incluidos, entre otros, daños por pérdida de beneficios, buena voluntad, uso,
+                                            datos. u otras pérdidas intangibles, que surjan de o estén relacionadas con el uso o la imposibilidad de utilizar el servicio.
+                                        </p>
+                                        <p>
+                                            Nos reservamos el derecho de modificar estos términos de vez en cuando a nuestra entera discreción. Por lo tanto, debes revisar estas
+                                            páginas periódicamente. Cuando cambiemos los Términos de una manera material, te notificaremos que se han realizado cambios importantes
+                                            en los Términos. El uso continuado de la página web o nuestro servicio después de dicho cambio constituye tu aceptación de los nuevos Términos.
+                                            Si no aceptas alguno de estos términos o cualquier versión futura de los Términos, no uses o  accedas (o continúes accediendo) a la página web o al servicio.
+                                        </p>
+                                        <p>
+                                            Acepta recibir de vez en cuando nuestros mensajes y materiales de promoción, por correo postal, correo electrónico o cualquier
+                                            otro formulario de contacto que nos proporciones (incluido tu número de teléfono para llamadas o mensajes de texto).
+                                            Si no deseas recibir dichos materiales o avisos de promociones, simplemente avísanos en cualquier momento.
+                                        </p>
+
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Entendido</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+                        <br />
+                        <div class="_form-warning" id="form-warning">
+                            <p><img src="~/Imagenes/warningnegro.png" /><b>Error:</b>Por favor llene el formulario correctamente</p>
+                        </div>
+
+                        <div class="_sigPag">
+                            <button class="_btn _volver-pag2">Atrás</button>
+                            <button class="_btn _fin" ng-click="CrearPerfilUsuario(Registro)">Finalizar</button>
+                        </div>
+
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+    @*<div class="alert alert-success" role="alert">
+        <h4 class="alert-heading">Bienvenida!</h4>
+        <p>Se ha creado la cuenta exitosamente, revisa tu bandeja de entrada para activarla</p>
+    </div>*@
+    <script src="~/Scripts/Login/Register.js"></script>
+</body>
+</html>
+

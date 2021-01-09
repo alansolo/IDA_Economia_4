@@ -1,0 +1,65 @@
+﻿body {
+}
+
+:root {
+    --letterWhite: #F8F9F9;
+    --backDarkBlue: #2C3E50;
+    --backDark: #333333;
+    --backLight: #F0F0F0;
+    --z-back: -10;
+    --z-normal: 1;
+    --z-tooltip: 10;
+    --z-fixed: 100;
+    --z-modal: 1000;
+}
+
+.navbar-details {
+    background-color: #17202A;
+}
+
+.footer-details {
+    background-color: var(--backDark);
+    height: 13em;
+}
+
+.text-color-navbar {
+    color: #032036;
+    font-size: 2rem !important;
+    font-weight: 100 !important;
+    font-family: 'Century Gothic', Futura !important;
+}
+
+.text-color-footer {
+    color: var(--letterWhite);
+    font-size: 1rem !important;
+    font-family: 'Century Gothic', Futura !important;
+}
+
+.navbartext {
+    display: flex;
+    align-items: center;
+}
+
+.margintext{
+    margin-top: 0rem !important;
+    margin-bottom: 0rem !important;
+}
+
+.navbar-color{
+    background-color: white;
+    opacity: 0.9;
+}
+
+.contact {
+    width: 30vw;
+    margin: 10px auto;
+}
+
+.container-bodycontent-position {
+    position: relative;
+    margin: 0px;
+    width: 100%;
+    background-color: var(--backLight);
+    z-index: var(--z-back);
+}
+

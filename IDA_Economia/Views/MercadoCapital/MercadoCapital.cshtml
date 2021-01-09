@@ -1,0 +1,700 @@
+﻿
+@{
+    ViewBag.Title = "MercadoCapital"; 
+    Layout = "~/Views/Shared/_LayoutIDA.cshtml";
+}
+
+@*<h4>Mercado de capitales</h4>*@
+
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="~/Scripts/google-chart.js"></script>
+
+
+    @*<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script type='text/javascript'>
+            google.charts.load('current', { 'packages': ['annotationchart'] });
+            google.charts.setOnLoadCallback(drawChart);
+
+            function drawChart() {
+                var data = new google.visualization.DataTable();
+                data.addColumn('date', 'Date');
+                data.addColumn('number', 'Kepler-22b mission');
+                data.addColumn('string', 'Kepler title');
+                data.addColumn('string', 'Kepler text');
+                data.addColumn('number', 'Gliese 163 mission');
+                data.addColumn('string', 'Gliese title');
+                data.addColumn('string', 'Gliese text');
+                data.addRows([
+                    [new Date(2314, 2, 15), 12400, undefined, undefined,
+                        10645, undefined, undefined],
+                    [new Date(2314, 2, 16), 24045, 'Lalibertines', 'First encounter',
+                        12374, undefined, undefined],
+                    [new Date(2314, 2, 17), 35022, 'Lalibertines', 'They are very tall',
+                        15766, 'Gallantors', 'First Encounter'],
+                    [new Date(2314, 2, 18), 12284, 'Lalibertines', 'Attack on our crew!',
+                        34334, 'Gallantors', 'Statement of shared principles'],
+                    [new Date(2314, 2, 19), 8476, 'Lalibertines', 'Heavy casualties',
+                        66467, 'Gallantors', 'Mysteries revealed'],
+                    [new Date(2314, 2, 20), 0, 'Lalibertines', 'All crew lost',
+                        79463, 'Gallantors', 'Omniscience achieved']
+                ]);
+
+                var chart = new google.visualization.AnnotationChart(document.getElementById('chart_div'));
+
+                var options = {
+                    displayAnnotations: true
+                };
+
+                chart.draw(data, options);
+            }
+        </script>*@
+
+    <link href="~/Content/Chart.css" rel="stylesheet" />
+    <script src="~/Scripts/Chart.js"></script>
+
+    <link href="~/Content/MercadoCapital/MercadoCapital.css" rel="stylesheet" />
+    <script src="~/Scripts/MercadoCapital/MercadoCapital.js"></script>
+
+</head>
+
+<body>
+    <div ng-app="MyApp" ng-controller="MyController">
+
+        <div class="accordion" id="accordionExampleUno">
+            <div class="card">
+                <div class="card-header" id="headingUno">
+                    <button class="navbar-toggler _boton-herramientas" type="button" data-toggle="collapse" data-target="#navbarSupportedContent2" aria-controls="navbarSupportedContent2" aria-expanded="true" aria-label="Toggle navigation">
+                        <img src="~/Imagenes/menu-alt.png"/>
+                    </button>
+                    <div class="navbar-collapse collapse show navbar-expand-lg" id="navbarSupportedContent2">
+                        <h2 class="mb-0">
+                            <button class="_button-head _font-color-green _font-header2" type="button" data-toggle="collapse" data-target="#collapseUno" aria-expanded="true" aria-controls="collapseUno">
+                                <i class="fa fa-chart-pie fa-lg _font-header2 _font-color-green"></i> Crea tu portafolio
+                            </button>
+                            <button class="_button-head _font-color-green _font-header2" type="button" data-toggle="collapse" data-target="#collapseDos" aria-expanded="false" aria-controls="collapseDos">
+                                <i class="fa fa-chart-bar fa-lg _font-header2 _font-color-green"></i> Soportes y resistencias
+                            </button>
+                            <button class="_button-head _font-color-green _font-header2" type="button" data-toggle="collapse" data-target="#collapseTres" aria-expanded="false" aria-controls="collapseTres">
+                                <i class="fa fa-laptop-code fa-lg _font-header2 _font-color-green"></i> Pronósticos
+                            </button>
+                            <button class="_button-head _font-color-green _font-header2" type="button" data-toggle="collapse" data-target="" aria-expanded="false" aria-controls="collapseTres">
+                                <i class="fa fa-chart-line fa-lg _font-header2 _font-color-green"></i> Compara
+                            </button>
+                            <button class="_button-head _font-color-green _font-header2" type="button" data-toggle="collapse" data-target="#collapseCinco" aria-expanded="false" aria-controls="collapseCinco">
+                                <i class="fa fa-wallet fa-lg _font-header2 _font-color-green"></i> Mi portafolio
+                            </button>
+                        </h2>
+                    </div>
+                </div>
+
+
+                <!--PORTAFOLIO DE INVERSIÓN-->
+                <div id="collapseUno" class="collapse" aria-labelledby="headingUno" data-parent="#accordionExampleUno">
+                    <div class="card-body _card-body">
+
+                        <div class="row">
+                            <div class="col-3" style="background-color: rgba(0, 0, 0, 0.03);">
+
+                                <!--Campo destinado a la obtención de datos, el cliente solicita a través de la lista, las variables que quiere descargar-->
+                                <div id="Capitalesu1" style="margin-left: 20px; margin-top: 10px; width:250px; float:left;" align="center">
+                                    <span class="_font-body1">¿Qué empresas quieres en tu portafolio?</span>
+                                    <br />
+
+                                    <div class="_capitales-container">
+                                        <div ng-repeat="d in ListCatCapital" class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" id="customCheck{{d.Id}}" ng-model="d.Check">
+                                            <label class="custom-control-label _font-body2" for="customCheck{{d.Id}}" ng-model="d.Valor">{{d.Nombre}}</label>
+                                        </div>
+                                    </div>
+
+
+                                    <br />
+
+                                    <span class="_font-body2">Fecha Inicial:</span>
+
+                                    <div class="input-group fecha-custom">
+                                        <input type="text" class="form-control fecha fecha-custom-text" id="fechaDocumento" name="fecha"
+                                               placeholder="DD/MM/YYYY" ng-model="FechaInicio" value="{{FechaInicio}}"
+                                               ng-change="" required readonly />
+                                        <div class="input-group-append">
+                                            <span class="input-group-text" id="basic-addon2">
+                                                <i class="fa fa-calendar-alt fa-lg"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <br />
+                                    <span class="_font-body2">Fecha Final:</span>
+
+                                    <div class="input-group fecha-custom">
+                                        <input type="text" class="form-control fecha fecha-custom-text" id="fechaDocumento" name="fecha"
+                                               placeholder="DD/MM/YYYY" ng-model="FechaFinal" value="{{FechaFinal}}"
+                                               ng-change="" required readonly />
+                                        <div class="input-group-append">
+                                            <span class="input-group-text" id="basic-addon2">
+                                                <i class="fa fa-calendar-alt fa-lg"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <br />
+
+                                    <button id="btnCapitales" class="btn btn-primary _font-body2 _button-gen" ng-click="ObtenerEstadistico()">
+                                        <i class="fa fa-chart-line fa-lg"></i> Calcular Portafolio
+                                    </button>
+
+                                    <br />
+                                    <br />
+                                    @*<button runat="server" id="btnExportCapitales" class="btn-primary" onserverclick="btnExportCapitales_Click">
+                                <i class="fa fa-file-excel fa-lg"></i> Exportar
+                            </button>*@
+                                    <a href="@Url.Action("ExportarExcel","MercadoCapital")" class="btn btn-primary _font-body2 _button-gen" id="ExportarCronograma">
+                                        <i class="fa fa-file-excel fa-lg" aria-hidden="true"></i> Exportar
+                                    </a>
+
+                                    <br />
+
+                                </div>
+
+                            </div>
+                            <div class="col-9 _graph-large">
+
+                                <!--El usuario visualiza en esta parte la gráfica en línea de la serie elegida-->
+
+                                <div id="Capitalesu2" style="min-width: 800px; float:left; margin-top:10px; margin-left: 45px; margin-right: auto; margin-bottom: auto;" align="center">
+
+                                    <span class="card-title">
+                                        <i class="fa fa-chart-area fa-lg"></i> Riesgo-Rendimiento<img data-toggle="modal" data-target="#staticBackdrop" class="img-fluid _icono-ayuda" src="~/Imagenes/informacion.png" />
+                                    </span>
+                                    <br />
+                                    <div id="linechart_material"></div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="row _graph-small">
+
+                            <div class="col-12">
+                                <div id="Capitalesu2" class="_capitalesu2" align="center">
+
+                                    <span class="card-title">
+                                        <i class="fa fa-chart-area fa-lg"></i> Riesgo-Rendimiento
+                                    </span>
+                                    <br />
+                                    <div id="linechart_material2"></div>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12">
+
+                                <!--Se muestra un resumen de la series como maximo, minimo, p. apertura, p. cierre, volumen de operacion, etc. -->
+                                <div id="Capitalesu311" align="center">
+                                    <br />
+
+                                    <div>
+                                        <table class="table">
+                                            <thead class="thead-light">
+                                                <tr>
+                                                    <th ng-repeat="j in ListEncabezadoEmpresa">{{j.Columna}}</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr ng-repeat="d in ListDatos">
+                                                    <td ng-repeat="m in d.datos">{{m}}</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div class="row">
+
+                            <div class="col-12">
+
+                                <!--Se muestran las estadísticas básicas de la serie económica: media, varianza, etc.-->
+                                <div id="Capitalesu411" align="center">
+
+                                    <br />
+
+                                    <div>
+                                        <table class="table">
+                                            <thead class="thead-light" ng-show="ListEmpresa.length">
+                                                <tr>
+                                                    <th>Empresa</th>
+                                                    <th>Rendimiento Promedio</th>
+                                                    <th>Max periodo</th>
+                                                    <th>Min periodo</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr ng-repeat="d in ListEmpresa">
+                                                    <td>{{d.Nombre}}</td>
+                                                    <td>{{d.MediaRendimiento}}</td>
+                                                    <td>{{d.MaxPrecio}}</td>
+                                                    <td>{{d.MinPrecio}}</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+                <!--PORTAFOLIO DE INVERSIÓN-->
+                <!--SOPORTES Y RESISTENCIAS-->
+                <div id="collapseDos" class="collapse" aria-labelledby="headingUno" data-parent="#accordionExampleUno">
+                    <div class="card-body _card-body">
+
+                        <div class="row _row-soportes">
+                            <div class="col-3" style="background-color: rgba(0, 0, 0, 0.03);">
+
+                                <!--Campo destinado a la obtención de datos, el cliente solicita a través de la lista, las variables que quiere descargar-->
+                                <div id="Capitalesu1" style="margin-left: 20px; margin-top: 10px; width:250px; float:left;" align="center">
+                                    <span class="_font-body1">¿Qué empresas quieres en tu portafolio?</span>
+                                    <br />
+
+                                    <div class="_capitales-container">
+                                        <div ng-repeat="d in ListCatCapital" class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" id="customCheck{{d.Id}}" ng-model="d.Check">
+                                            <label class="custom-control-label _font-body2" for="customCheck{{d.Id}}" ng-model="d.Valor">{{d.Nombre}}</label>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <button class="btn-primary" ng-click="ObtenerSoporteResistencia()">Cargar</button>
+
+                            </div>
+                            <div class="col-9 _graph-soportes">
+
+                                <!--El usuario visualiza en esta parte la gráfica en línea de la serie elegida-->
+                                @*<div id="Capitalesu2" style="min-width: 800px; float:left; margin-top:10px; margin-left: 45px; margin-right: auto; margin-bottom: auto;" align="center">
+
+                            <span class="card-title">
+                                <i class="fa fa-chart-area fa-lg"></i> Soportes y resistencias
+                            </span>
+                            <br />
+                            <div id='chart_div' style='width: 900px; height: 600px;'></div>
+
+                        </div>*@
+
+                                <canvas id="myChart"></canvas>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!--SOPORTES Y RESISTENCIAS-->
+                <!--PRONÓSTICOS-->
+                <div id="collapseTres" class="collapse" aria-labelledby="headingUno" data-parent="#accordionExampleUno">
+                    <div class="card-body _card-body">
+
+                        <div class="row">
+                            <div class="col-3" style="background-color: rgba(0, 0, 0, 0.03);">
+
+                                <!--Campo destinado a la obtención de datos, el cliente solicita a través de la lista, las variables que quiere descargar-->
+                                <div id="Capitalesu1" style="margin-left: 20px; margin-top: 10px; width:250px; float:left;" align="center">
+                                    <span class="_font-body1">¿Qué empresas quieres en tu portafolio?</span>
+                                    <br />
+
+                                    <div class="_capitales-container">
+                                        <div ng-repeat="d in ListCatCapital" class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" id="customCheck{{d.Id}}" ng-model="d.Check">
+                                            <label class="custom-control-label _font-body2" for="customCheck{{d.Id}}" ng-model="d.Valor">{{d.Nombre}}</label>
+                                        </div>
+                                    </div>
+
+
+                                    <br />
+
+                                    <span class="_font-body2">Fecha Inicial:</span>
+
+                                    <div class="input-group fecha-custom">
+                                        <input type="text" class="form-control fecha fecha-custom-text" id="fechaDocumento" name="fecha"
+                                               placeholder="DD/MM/YYYY" ng-model="FechaInicio" value="{{FechaInicio}}"
+                                               ng-change="" required readonly />
+                                        <div class="input-group-append">
+                                            <span class="input-group-text" id="basic-addon2">
+                                                <i class="fa fa-calendar-alt fa-lg"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <br />
+                                    <span class="_font-body2">Fecha Final:</span>
+
+                                    <div class="input-group fecha-custom">
+                                        <input type="text" class="form-control fecha fecha-custom-text" id="fechaDocumento" name="fecha"
+                                               placeholder="DD/MM/YYYY" ng-model="FechaFinal" value="{{FechaFinal}}"
+                                               ng-change="" required readonly />
+                                        <div class="input-group-append">
+                                            <span class="input-group-text" id="basic-addon2">
+                                                <i class="fa fa-calendar-alt fa-lg"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <br />
+
+                                    <button id="btnCapitales" class="btn btn-primary _font-body2 _button-gen" ng-click="ObtenerEstadistico()">
+                                        <i class="fa fa-chart-line fa-lg"></i> Calcular Portafolio
+                                    </button>
+
+                                    <br />
+                                    <br />
+                                    @*<button runat="server" id="btnExportCapitales" class="btn-primary" onserverclick="btnExportCapitales_Click">
+                                <i class="fa fa-file-excel fa-lg"></i> Exportar
+                            </button>*@
+                                    <a href="@Url.Action("ExportarExcel","MercadoCapital")" class="btn btn-primary _font-body2 _button-gen" id="ExportarCronograma">
+                                        <i class="fa fa-file-excel fa-lg" aria-hidden="true"></i> Exportar
+                                    </a>
+
+                                    <br />
+
+                                </div>
+
+                            </div>
+                            <div class="col-9 _graph-large">
+
+                                <!--El usuario visualiza en esta parte la gráfica en línea de la serie elegida-->
+
+                                <div id="Capitalesu2" style="min-width: 800px; float:left; margin-top:10px; margin-left: 45px; margin-right: auto; margin-bottom: auto;" align="center">
+
+                                    <span class="card-title">
+                                        <i class="fa fa-chart-area fa-lg"></i> Riesgo-Rendimiento
+                                    </span>
+                                    <br />
+                                    <br />
+                                    <div id="linechart_material"></div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="row _graph-small">
+
+                            <div class="col-12">
+                                <div id="Capitalesu2" class="_capitalesu2" align="center">
+
+                                    <span class="card-title">
+                                        <i class="fa fa-chart-area fa-lg"></i> Riesgo-Rendimiento
+                                    </span>
+                                    <br />
+                                    <div id="linechart_material2"></div>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12 _div-table">
+
+                                <!--Se muestra un resumen de la series como maximo, minimo, p. apertura, p. cierre, volumen de operacion, etc. -->
+                                <div id="Capitalesu311" align="center">
+                                    <br />
+
+                                    <div>
+                                        <table class="table">
+                                            <thead class="thead-light">
+                                                <tr>
+                                                    <th ng-repeat="j in ListEncabezadoEmpresa">{{j.Columna}}</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr ng-repeat="d in ListDatos">
+                                                    <td ng-repeat="m in d.datos">{{m}}</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div class="row">
+
+                            <div class="col-12">
+
+                                <!--Se muestran las estadísticas básicas de la serie económica: media, varianza, etc.-->
+                                <div id="Capitalesu411" align="center">
+
+                                    <br />
+
+                                    <div>
+                                        <table class="table">
+                                            <thead class="thead-light" ng-show="ListEmpresa.length">
+                                                <tr>
+                                                    <th>Empresa</th>
+                                                    <th>Rendimiento Promedio</th>
+                                                    <th>Max periodo</th>
+                                                    <th>Min periodo</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr ng-repeat="d in ListEmpresa">
+                                                    <td>{{d.Nombre}}</td>
+                                                    <td>{{d.MediaRendimiento}}</td>
+                                                    <td>{{d.MaxPrecio}}</td>
+                                                    <td>{{d.MinPrecio}}</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+                <!--PRONÓSTICOS-->
+                <!--MI PORTAFOLIO-->
+                <div id="collapseCinco" class="collapse" aria-labelledby="headingUno" data-parent="#accordionExampleUno">
+                    <div class="card-body _card-body">
+
+                        <div class="row _row">
+
+                            <h4 class="_header-portafolio">
+                                Valor del portafolio
+                            </h4>
+                            <span class="_valor-portafolio">$10,000</span>
+
+                            <div class="_graph-container">
+                                <div class="_graph-donnut1">
+
+                                </div>
+
+                                <div class="_graph-donnut2">
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="_table-container">
+                            <table class="_table">
+                                <thead>
+                                    <tr>
+                                        <th>Consecutivo</th>
+                                        <th>Precio de compra</th>
+                                        <th>No. de acciones</th>
+                                        <th>Valor de la posición</th>
+                                        <th>Precio actual</th>
+                                        <th>Rendimiento histórico</th>
+                                        <th>Rendimiento del día</th>
+                                        <th>Ganancia actual</th>
+                                    </tr>
+                                </thead>    
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>2</td>
+                                        <td>3</td>
+                                        <td>4</td>
+                                        <td>5</td>
+                                        <td>6</td>
+                                        <td>7</td>
+                                        <td>8</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>2</td>
+                                        <td>3</td>
+                                        <td>4</td>
+                                        <td>5</td>
+                                        <td>6</td>
+                                        <td>7</td>
+                                        <td>8</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>2</td>
+                                        <td>3</td>
+                                        <td>4</td>
+                                        <td>5</td>
+                                        <td>6</td>
+                                        <td>7</td>
+                                        <td>8</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>2</td>
+                                        <td>3</td>
+                                        <td>4</td>
+                                        <td>5</td>
+                                        <td>6</td>
+                                        <td>7</td>
+                                        <td>8</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>2</td>
+                                        <td>3</td>
+                                        <td>4</td>
+                                        <td>5</td>
+                                        <td>6</td>
+                                        <td>7</td>
+                                        <td>8</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>2</td>
+                                        <td>3</td>
+                                        <td>4</td>
+                                        <td>5</td>
+                                        <td>6</td>
+                                        <td>7</td>
+                                        <td>8</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>2</td>
+                                        <td>3</td>
+                                        <td>4</td>
+                                        <td>5</td>
+                                        <td>6</td>
+                                        <td>7</td>
+                                        <td>8</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <img class="_right" src="~/Imagenes/flecha-derecha.png"/>
+                        
+                        <div class="_resumenes-container">
+                            <div class="_resumen-operaciones">
+                                <h4>Operaciones</h4>
+                                <div class="_operaciones1">
+                                    <label>Tipo de operacion</label>
+                                    <select name="operacion">
+                                        <option value="1">Compra</option>
+                                        <option value="2">Venta</option>
+                                    </select>
+                                    <label>Activo</label>
+                                    <select name="Activos">
+                                        <option value="1">Activo 1</option>
+                                        <option value="2">Activo 2</option>
+                                    </select>
+                                </div>
+                                <div class="_operaciones2">
+                                    <div class="_op1">
+                                        <label>Monto de inversión</label>
+                                        <input type="number" />
+                                    </div>
+                                    <div class="_op2">
+                                        <label>Precio de compra</label>
+                                        <input type="number" />
+                                    </div>
+                                    
+                                </div>
+                                
+
+                                <p>Operaciones abiertas</p>
+
+                                <table class="_table2">
+                                    <thead>
+                                        <tr>
+                                            <th>Fecha</th>
+                                            <th>Estado</th>
+                                            <th>Inversión</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
+
+                                <p>Operaciones cerradas</p>
+
+                                <table class="_table2">
+                                    <thead>
+                                        <tr>
+                                            <th>Fecha</th>
+                                            <th>Estado</th>
+                                            <th>Ganancia/Pérdida</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
+
+                            </div>
+                            <div class="_resumen-rendimiento">
+                                <div class="_resumen-rendimiento1">
+                                    <div class="_ganancia-total">
+                                        <span>Ganancia total</span>
+                                    </div>
+                                    <div class="_rend-total">
+                                        <span>Rendimiento total</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="_ganan-ultimaoperacion">
+                                    <span>Ganancia de la última operación</span>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+                <!--MI PORTAFOLIO-->
+                <!--MODALES-->
+                <!-- Modal -->
+                <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="_modal-header-color">
+                                <h5 class="modal-title" id="staticBackdropLabel">Ayuda</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body _modal-overflow">
+
+                                <p class="_font-body2">
+                                    Pasa el cursor sobre la gráfica para conocer las diferentes combinaciones que calculamos para tu portafolio.
+                                    Hacia la derecha el riesgo crece pero también las ganancias.
+                                </p>
+
+                                <img src="~/Imagenes/Ayuda1.png" style="width: 450px;" />
+
+                                <p class="_font-body2">Debajo de la gráfica encontrarás los montos que debes invertir en cada unas de las acciones que elegiste.</p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--MODALES-->
+
+
+
+            </div>
+        </div>
+
+    </div>
+</body>
